@@ -1,0 +1,8 @@
+@inproceedings{wang2021cpnet,
+  title={CPNet: cycle prototype network for weakly-supervised 3D renal compartments segmentation on CT images},
+  author={Wang, Song and He, Yuting and Kong, Youyong and Zhu, Xiaomei and Zhang, Shaobo and Shao, Pengfei and Dillenseger, Jean-Louis and Coatrieux, Jean-Louis and Li, Shuo and Yang, Guanyu},
+  booktitle={Medical Image Computing and Computer Assisted Intervention--MICCAI 2021: 24th International Conference, Strasbourg, France, September 27--October 1, 2021, Proceedings, Part II 24},
+  pages={592--602},
+  year={2021},
+  organization={Springer}
+}

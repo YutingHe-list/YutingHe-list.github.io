@@ -1,0 +1,7 @@
+@inproceedings{he2023geometric,
+  title={Geometric Visual Similarity Learning in 3D Medical Image Self-supervised Pre-training},
+  author={He, Yuting and Yang, Guanyu and Ge, Rongjun and Chen, Yang and Coatrieux, Jean-Louis and Wang, Boyu and Li, Shuo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={9538--9547},
+  year={2023}
+}

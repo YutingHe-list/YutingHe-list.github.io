@@ -1,0 +1,10 @@
+@article{yang2023multi,
+  title={Multi-Task Learning for Pulmonary Arterial Hypertension Prognosis Prediction via Memory Drift and Prior Prompt Learning on 3D Chest CT},
+  author={Yang, Guanyu and He, Yuting and Lv, Yang and Chen, Yang and Coatrieux, Jean-Louis and Sun, Xiaoxuan and Wang, Qiang and Wei, Yongyue and Li, Shuo and Zhu, Yinsu},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  volume={27},
+  number={4},
+  pages={1967--1978},
+  year={2023},
+  publisher={IEEE}
+}

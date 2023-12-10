@@ -1,0 +1,9 @@
+@article{he2021meta,
+  title={Meta grayscale adaptive network for 3D integrated renal structures segmentation},
+  author={He, Yuting and Yang, Guanyu and Yang, Jian and Ge, Rongjun and Kong, Youyong and Zhu, Xiaomei and Zhang, Shaobo and Shao, Pengfei and Shu, Huazhong and Dillenseger, Jean-Louis and others},
+  journal={Medical image analysis},
+  volume={71},
+  pages={102055},
+  year={2021},
+  publisher={Elsevier}
+}

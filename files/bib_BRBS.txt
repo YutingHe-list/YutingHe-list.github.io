@@ -1,0 +1,7 @@
+@article{he2022learning,
+  title={Learning better registration to learn better few-shot medical image segmentation: Authenticity, diversity, and robustness},
+  author={He, Yuting and Ge, Rongjun and Qi, Xiaoming and Chen, Yang and Wu, Jiasong and Coatrieux, Jean-Louis and Yang, Guanyu and Li, Shuo},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2022},
+  publisher={IEEE}
+}

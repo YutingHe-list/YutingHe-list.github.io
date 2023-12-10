@@ -1,0 +1,9 @@
+@article{qi2021examinee,
+  title={Examinee-Examiner Network: weakly supervised accurate coronary lumen segmentation using centerline constraint},
+  author={Qi, Yaolei and Xu, Han and He, Yuting and Li, Guanyu and Li, Zehang and Kong, Youyong and Coatrieux, Jean-Louis and Shu, Huazhong and Yang, Guanyu and Tu, Shengxian},
+  journal={IEEE Transactions on Image Processing},
+  volume={30},
+  pages={9429--9441},
+  year={2021},
+  publisher={IEEE}
+}

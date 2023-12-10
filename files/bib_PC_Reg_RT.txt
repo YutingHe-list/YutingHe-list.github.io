@@ -1,0 +1,10 @@
+@article{he2021few,
+  title={Few-shot learning for deformable medical image registration with perception-correspondence decoupling and reverse teaching},
+  author={He, Yuting and Li, Tiantian and Ge, Rongjun and Yang, Jian and Kong, Youyong and Zhu, Jian and Shu, Huazhong and Yang, Guanyu and Li, Shuo},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  volume={26},
+  number={3},
+  pages={1177--1187},
+  year={2021},
+  publisher={IEEE}
+}

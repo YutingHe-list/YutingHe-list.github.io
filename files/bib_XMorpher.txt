@@ -1,0 +1,8 @@
+@inproceedings{shi2022xmorpher,
+  title={Xmorpher: Full transformer for deformable medical image registration via cross attention},
+  author={Shi, Jiacheng and He, Yuting and Kong, Youyong and Coatrieux, Jean-Louis and Shu, Huazhong and Yang, Guanyu and Li, Shuo},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={217--226},
+  year={2022},
+  organization={Springer}
+}

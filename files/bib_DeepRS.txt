@@ -1,0 +1,8 @@
+@inproceedings{he2020deep,
+  title={Deep complementary joint model for complex scene registration and few-shot segmentation on medical images},
+  author={He, Yuting and Li, Tiantian and Yang, Guanyu and Kong, Youyong and Chen, Yang and Shu, Huazhong and Coatrieux, Jean-Louis and Dillenseger, Jean-Louis and Li, Shuo},
+  booktitle={Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part XVIII 16},
+  pages={770--786},
+  year={2020},
+  organization={Springer}
+}

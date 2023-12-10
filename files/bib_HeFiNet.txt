@@ -1,0 +1,8 @@
+@inproceedings{he2021thin,
+  title={Thin Semantics Enhancement via High-Frequency Priori Rule for Thin Structures Segmentation},
+  author={He, Yuting and Ge, Rongjun and Wu, Jiasong and Coatrieux, Jean-Louis and Shu, Huazhong and Chen, Yang and Yang, Guanyu and Li, Shuo},
+  booktitle={2021 IEEE International Conference on Data Mining (ICDM)},
+  pages={1096--1101},
+  year={2021},
+  organization={IEEE}
+}

@@ -1,0 +1,8 @@
+@inproceedings{he2021enmcgan,
+  title={EnMcGAN: adversarial ensemble learning for 3d complete renal structures segmentation},
+  author={He, Yuting and Ge, Rongjun and Qi, Xiaoming and Yang, Guanyu and Chen, Yang and Kong, Youyong and Shu, Huazhong and Coatrieux, Jean-Louis and Li, Shuo},
+  booktitle={Information Processing in Medical Imaging: 27th International Conference, IPMI 2021, Virtual Event, June 28--June 30, 2021, Proceedings 27},
+  pages={465--477},
+  year={2021},
+  organization={Springer}
+}
