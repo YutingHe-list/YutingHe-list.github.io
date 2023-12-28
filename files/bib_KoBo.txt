@@ -1,0 +1,8 @@
+@inproceedings{chen2023knowledge,
+  title={Knowledge boosting: Rethinking medical contrastive vision-language pre-training},
+  author={Chen, Xiaofei and He, Yuting and Xue, Cheng and Ge, Rongjun and Li, Shuo and Yang, Guanyu},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={405--415},
+  year={2023},
+  organization={Springer}
+}
