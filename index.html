@@ -1,213 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuting He - 何宇霆 个人主页</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, "Noto Serif SC", serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #002b36;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav {
-      background: #f5f5f5;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0.8rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      text-decoration: none;
-      color: #005f87;
-      font-weight: 500;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .profile {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .profile-info {
-      flex: 1;
-      min-width: 250px;
-    }
-    .profile-photo img {
-      border-radius: 8px;
-      width: 250px;
-    }
-    h2 {
-      border-left: 4px solid #005f87;
-      padding-left: 0.5rem;
-      margin-top: 2rem;
-      color: #005f87;
-    }
-    h3 {
-      margin-top: 1.5rem;
-      color: #333;
-    }
-    .news, .awards, .services {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      margin-bottom: 2rem;
-    }
-    .news ul, .awards ul, .services ul {
-      padding-left: 1.2rem;
-    }
-    .publications {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    }
-    .pub_item {
-      border-left: 3px solid #ccc;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    .pub_title {
-      font-weight: bold;
-      margin: 0.2rem 0;
-    }
-    .pub_author {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column-reverse;
-        align-items: center;
-      }
-      .profile-photo img {
-        width: 180px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
+<title>Yuting He-何宇霆个人主页</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+.menu {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+#container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+#toptitle h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.imgtable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.imgtable td {
+    vertical-align: top;
+    padding: 10px;
+}
+.bio, .news, .awards, .services, .publications {
+    margin-bottom: 40px;
+}
+h2 {
+    border-bottom: 2px solid #922B21;
+    padding-bottom: 5px;
+}
+h3 {
+    color: #922B21;
+    margin-top: 30px;
+}
+.pub_table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+.pub_table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.pub_title {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.pub_author {
+    margin: 0;
+    font-size: 0.95em;
+    color: #444;
+}
+.pub_author a {
+    text-decoration: none;
+    color: #922B21;
+}
+.pub_author a:hover {
+    text-decoration: underline;
+}
+.news ul, .awards ul, .services ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Yuting He · 何宇霆</h1>
-  <p>Research Associate, Case Western Reserve University</p>
-</header>
-
-<nav>
-  <a href="#home">Home</a>
-  <a href="#awards">Awards</a>
-  <a href="#publications">Research</a>
-  <a href="#services">Services</a>
-</nav>
-
-<div class="container">
-  <!-- Profile -->
-  <section id="home" class="profile">
-    <div class="profile-info">
-      <h2>Biography</h2>
-      <p>
-        I am currently a Research Associate in the Department of Biomedical Engineering, Case Western Reserve University, working with <a href="https://case.edu/engineering/about/faculty-and-staff-directory/shuo-li">Shuo Li</a>. 
-        My research lies in biomedical informatics, computer vision, and deep learning, focusing on efficient medical image representation for diagnosis, surgery, and imaging. 
-        I have published 20+ peer-reviewed papers (RBME, CVPR, ECCV, TNNLS, MedIA, NC, TIP, J-BHI, IJCAI, MICCAI, IPMI, etc.). 
-        Organizer of MICCAI-KiPA22 challenge, reviewer for J-BHI, TMI, CVPR, ICCV, MICCAI, AAAI, NeurIPS.
-      </p>
-      <p>
-        📧 <a href="mailto:yuting.he4@case.edu">yuting.he4@case.edu</a> <br>
-        <a href="https://scholar.google.com/citations?user=WYzBMTUAAAAJ">Google Scholar</a> | 
-        <a href="https://github.com/YutingHe-list">GitHub</a> | 
-        <a href="https://www.researchgate.net/profile/Yuting-He-17">ResearchGate</a>
-      </p>
-    </div>
-    <div class="profile-photo">
-      <img src="./files/yutinghe_.jpg" alt="Yuting He">
-    </div>
-  </section>
-
-  <!-- News -->
-  <section class="news">
-    <h2>News</h2>
-    <div style="max-height:240px; overflow:auto;">
-      <ul>
-        <li>[2025.07] Paper accepted by IEEE TCSVT: <a href="https://ieeexplore.ieee.org/abstract/document/11079704">Adaptation follow human attention</a></li>
-        <li>[2025.06] 1 paper accepted by ICCV 2025</li>
-        <li>[2025.05] 1 paper accepted by ICML 2025</li>
-        <li>[2025.02] Paper accepted by T-PAMI: <a href="https://arxiv.org/abs/2502.05282">Homeomorphism and Medical Image Representation Learning</a></li>
-        <!-- 省略部分旧新闻，可继续保留 -->
-      </ul>
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards" class="awards">
-    <h2>Awards and Honors</h2>
-    <ul>
-      <li>2023, Bao Gang Outstanding Student Award (宝钢优秀学生奖, <span style="color:blue">500 students in China each year</span>)</li>
-      <li>2021, 2023, National Scholarship</li>
-      <li>2023, Merit Student of Jiangsu Province</li>
-    </ul>
-  </section>
-
-  <!-- Publications -->
-  <section id="publications" class="publications">
-    <h2>Selected Publications</h2>
-    <div class="pub_item">
-      <p class="pub_title">Vector Contrastive Learning For Pixel-Wise Pretraining In Medical Vision.</p>
-      <p class="pub_author"><u><b>Yuting He</b></u>, Shuo Li. <i>ICCV 2025</i> 
-      | <a href="https://arxiv.org/abs/2506.20850">Paper</a> | <a href="https://github.com/YutingHe-list/COVER">Code</a></p>
-    </div>
-    <div class="pub_item">
-      <p class="pub_title">Adaptation follow human attention: Gaze-assisted medical segment anything model.</p>
-      <p class="pub_author">Rongjun Ge, ..., <u><b>Yuting He</b></u>. <i>IEEE TCSVT 2025</i> 
-      | <a href="https://github.com/Ruiz1026/GAM">Code</a></p>
-    </div>
-    <!-- 可继续添加其他论文 -->
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2>Services</h2>
-    <p><b>Workshop/Challenge Organizers:</b> Co-organizer of <a href="https://kipa22.grand-challenge.org/">MICCAI-KiPA22</a></p>
-    <p><b>Conference Reviewer:</b> MICCAI, AAAI, CVPR, ICCV, NeurIPS</p>
-    <p><b>Journal Reviewer:</b> TMI, TNNLS, TCSVT, J-BHI, CMIG, MIR</p>
-  </section>
+<div class="menu">
+    <a href="#home"><b>Home</b></a>
+    <a href="#awards"><b>Awards</b></a>
+    <a href="#publications"><b>Research</b></a>
+    <a href="#services"><b>Services</b></a>
 </div>
 
-<footer>
-  © 2025 Yuting He | Last updated: Aug 30, 2025
-</footer>
+<a id="home" class="anchor"></a>
+<div id="container">
 
+<section id="header">
+    <div id="toptitle">
+        <h1>Yuting He&nbsp;&nbsp;何宇霆</h1>
+    </div>
+    <table class="imgtable">
+        <tr>
+            <td align="right">
+                <p>
+                    <b style="color:#424949;font-size:1.1em;">Research Associate</b><br><br>
+                    Rm 517A, Wickenden Bldg,<br>
+                    Case Western Reserve University<br>
+                    Cleveland, OH 44106<br><br>
+                    Email: <span style="font-family:courier new, monospace;">yuting</span> [DOT] <span style="font-family:courier new, monospace;">he4</span> [AT] <span style="font-family:courier new, monospace;">case</span> [DOT] <span style="font-family:courier new, monospace;">edu</span><br><br>
+                    <a href="https://scholar.google.com/citations?hl=zh-CN&user=WYzBMTUAAAAJ"><img src="./files/google_scholar.png" height="20px" style="margin-bottom:-3px">&nbsp;Google Scholar</a>
+                    <a href="https://github.com/YutingHe-list"><img src="./files/github_s.jpg" height="20px" style="margin-bottom:-3px">&nbsp;Github</a>
+                    <a href="https://www.researchgate.net/profile/Yuting-He-17?ev=hdr_xprf"><img src="./files/rg.png" height="20px" style="margin-bottom:-3px">&nbsp;ResearchGate</a>
+                </p>
+            </td>
+            <td align="left" width="250px">
+                <img src="./files/yutinghe_.jpg" alt="Yuting He" height="250px"/>
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section class="bio">
+<h2>Biography</h2>
+<p>
+I am currently a Research Associate in the department of biomedical engineering, Case Western Reserve University, working with <a href="https://case.edu/engineering/about/faculty-and-staff-directory/shuo-li">Shuo Li</a>. Drawing upon biomedical informatics, computer vision, and deep learning, my research focuses on developing novel methodologies to learn more efficient extraction of knowledge in medical information for computer-aided diagnosis, surgery, and medical imaging. I have published more than 20 peer-reviewed journal/conference articles, including RBME, CVPR, ECCV, TNNLS, MedIA, NC, TIP, J-BHI, IJCAI, MICCAI, IPMI, etc. I was the organizer of the MICCAI-KiPA22 challenge, and provided professional service for J-BHI, TMI, CVPR, ICCV, MICCAI, AAAI, and NeurIPS.
+</p>
+</section>
+
+<section class="news">
+<h2>News</h2>
+<div style="height:240px;overflow:auto;">
+<ul>
+<li>[2025.07] 1 paper named <a href="https://ieeexplore.ieee.org/abstract/document/11079704">Adaptation follow human attention: Gaze-assisted medical segment anything model</a> has been accepted by IEEE TCSVT (IF: 11.1)</li>
+<li>[2025.07] 1 paper has been accepted by IEEE TMI (IF: 9.8)</li>
+<li>[2025.06] 1 paper has been accepted by ICCV 2025</li>
+<li>[2025.05] 1 paper has been accepted by ICML 2025</li>
+<li>[2025.02] 1 paper about <a href="https://arxiv.org/abs/2502.05282">Homeomorphism and Medical Image Representation Learning</a> has been accepted by T-PAMI (IF: 20.8)</li>
+<li>[2024.11] Our survey on <a href="https://arxiv.org/abs/2404.03264">healthcare foundation model</a>, has been accepted by IEEE RBME (IF: 17.2)</li>
+<li>[2024.10] An imaging foundation model, <a href="https://arxiv.org/abs/2410.01591">TAMP</a>, has been released. It can achieve universal enhancement for any non-ideal measurement CT images.</li>
+<li>[2024.04] A survey about <a href="https://arxiv.org/abs/2404.03264">healthcare foundation models</a> has been released. This survey is "Foundation Model for Advancing Healthcare: Challenges, Opportunities and Future Directions"</li>
+<li>[2023.12] I have graduated from Southeast University! My PhD thesis is "<a href="./files/PhD_thesis_YutingHe.pdf">Data-Efficient Learning Algorithm in Medical Image Segmentation</a>" (in Chinese).</li>
+<li>[2023.12] 1 paper has been accepted by J-BHI 2023</li>
+<li>[2023.11] I achieved the Bao Gang Outstanding Student Award which is one of the top educational scholarships in China (Only 500 students in China each year)</li>
+<li>[2023.11] Our paper "Segment Anything in Medical Images" has been formally accepted by Nature Communications (Impact Factor: 17.0) <a href="https://github.com/bowang-lab/MedSAM">[code]</a></li>
+<li>[2023.09] 1 paper has been accepted by ICCV 2023</li>
+<li>[2023.06] 2 papers has been accepted by MICCAI 2023</li>
+<li>[2023.02] 1 paper has been accepted by CVPR 2023</li>
+<li>[2023.02] 1 paper has been accepted by JBHI</li>
+<li>[2023.02] 1 paper has been accepted by KBS</li>
+<li>[2022.08] 1 paper has been accepted by TNNLS</li>
+<li>[2022.06] <a href="https://kipa22.grand-challenge.org/">MICCAI 2022 KiPA</a> challenge is in full swing.</li>
+<li>[2022.06] 4 papers are accepted by MICCAI 2022.</li>
+<li>[2022.05] 1 paper has been accepted by IJCAI</li>
+<li>[2021.10] 1 paper has been accepted by TIP</li>
+</ul>
+</div>
+</section>
+
+<section class="awards">
+<a id="awards" class="anchor"></a>
+<h2>Awards and Honors</h2>
+<ul>
+<li>2023, Bao Gang Outstanding Student Award (宝钢优秀学生奖, <span style="color:blue">500 students in China each year</span>)</li>
+<li>2021, 2023, National Scholarship</li>
+<li>2023, Merit student of Jiangsu Province</li>
+<li>2022, Southeast University Good Youth Award (东大好青年, <span style="color:blue">10 students in SEU each year</span>)</li>
+<li>2022, Southeast University Graduate Student of the Year (正·青年, <span style="color:blue">10 graduated students in SEU each year</span>)</li>
+<li>2019-2021, Merit student of Southeast University</li>
+<li>2020, Southeast University Doctoral Freshman Award</li>
+</ul>
+</section>
+
+<section class="publications">
+<a id="publications" class="anchor"></a>
+<h2>Selected Publications [<a href="https://scholar.google.com/citations?hl=zh-CN&user=WYzBMTUAAAAJ" target="_blank">Google Scholar</a>]</h2>
+
+<h3>☆ Foundation and Pre-training Models for Biomedical Data</h3>
+<table class="pub_table">
+<tr><td>
+<p class="pub_title">Vector Contrastive Learning For Pixel-Wise Pretraining In Medical Vision.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Shuo Li<br>
+<i>IEEE/CVF International Conference on Computer Vision</i><br>
+<font color="#922B21"><b>&nbsp;ICCV 2025&nbsp;</b></font> |<a href="https://arxiv.org/abs/2506.20850">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/COVER">&nbsp;Code&nbsp;</a> |<a href="./files/slide_COVER.pdf">&nbsp;Slide&nbsp;</a> |<a href="https://zhuanlan.zhihu.com/p/1922109536103302891">&nbsp;中文解读&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Adaptation follow human attention: Gaze-assisted medical segment anything model.</p>
+<p class="pub_author">Rongjun Ge, Ruiyi Li, Chong Wang, Yuxin Liu, Heng Zhu, Jean-Louis Coatrieux, Daoqiang Zhang, Jian Lu, Yang Chen, Shuo Li, <u><b>Yuting He</b></u><br>
+<i>IEEE Transactions on Circuits and Systems for Video Technology</i><br>
+<font color="#922B21"><b>&nbsp;IEEE T-CSVT 2025&nbsp;</b></font> |<a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/Ruiz1026/GAM">&nbsp;Code&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Homeomorphism Prior for False Positive and Negative Problem in Medical Image Dense Contrastive Representation Learning.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Boyu Wang, Rongjun Ge, Yang Chen, Guanyu Yang, Shuo Li<br>
+<i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i><br>
+<font color="#922B21"><b>&nbsp;IEEE T-PAMI 2025&nbsp;</b></font> |<a href="https://arxiv.org/abs/2502.05282">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/GEMINI">&nbsp;Code&nbsp;</a> |<a href="https://zhuanlan.zhihu.com/p/29316280297">&nbsp;中文解读&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Imaging foundation model for universal enhancement of non-ideal measurement CT.</p>
+<p class="pub_author">Yuxin Liu, Rongjun Ge, <u><b>Yuting He* (Corresponding author)</b></u>, Zhan Wu, Chenyu You, Shuo Li, Yang Chen*<br>
+<i>Preprint</i><br>
+<font><b>&nbsp;Preprint&nbsp;</b></font> |<a href="https://arxiv.org/abs/2410.01591">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/TAMP">&nbsp;Code&nbsp;</a> |<a href="./files/bib_TAMP.txt">&nbsp;Bibtex&nbsp;</a> |<a href="https://huggingface.co/datasets/YutingHe-list/SimNICT">&nbsp;Dataset&nbsp;</a> |<a href="https://github.com/YutingHe-list/TAMP/blob/main/document/Model_zoo.md">&nbsp;Model zoo&nbsp;</a> |<a href="https://zhuanlan.zhihu.com/p/863644551">&nbsp;中文解读&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Foundation Model for Advancing Healthcare: Challenges, Opportunities and Future Directions.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Fuxiang Huang, Xinrui Jiang, Yuxiang Nie, Minghao Wang, Jiguang Wang, Hao Chen.<br>
+<i>IEEE Reviews in Biomedical Engineering</i><br>
+<font color="#922B21"><b>&nbsp;IEEE R-BME 2024&nbsp;</b></font> |<a href= "https://arxiv.org/abs/2404.03264">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare">&nbsp;Awesome repository&nbsp;</a> |<a href="./files/bib_HFM.txt">&nbsp;Bibtex&nbsp;</a> |<a href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare/blob/main/files/HFM_Chinese.pdf">&nbsp;中译版&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Geometric Visual Similarity Learning in 3D Medical Image Self-supervised Pre-training.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Guanyu Yang, Rongjun Ge, Yang Chen, Jean-Louis Coatrieux, Boyu Wang, Shuo Li.<br>
+<i>IEEE/CVF Conference on Computer Vision and Pattern Recognition</i> (<b>Travel Award</b>)<br>
+<font color="#922B21"><b>&nbsp;CVPR 2023&nbsp;</b></font> |<a href= "https://arxiv.org/abs/2303.00874">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/GVSL">&nbsp;Code&nbsp;</a> |<a href="./files/poster_GVSL.pdf">&nbsp;Poster&nbsp;</a> |<a href="./files/slide_GVSL.pdf">&nbsp;Slide&nbsp;</a> |<a href="https://x-ark.github.io/">&nbsp;Homepage&nbsp;</a> |<a href="./files/bib_GVSL.txt">&nbsp;Bibtex&nbsp;</a> |<a href="./files/paper_Chinese_GVSL.pdf">&nbsp;中译版&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Segment Anything in Medical Images.</p>
+<p class="pub_author">Jun Ma, <u><b>Yuting He</b></u>, Feifei Li, Lin Han, Chenyu You, Bo Wang.<br>
+<i>Nature Communication [In Press]</i><br> 
+<font color="#922B21"><b>&nbsp;Nat. Comm 2023&nbsp;</b></font> |<a href= "https://www.nature.com/articles/s41467-024-44824-z">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/bowang-lab/MedSAM">&nbsp;Code&nbsp;</a></p>
+</td></tr>
+</table>
+
+<h3>☆ Representation- and Annotation-Efficient Biomedical Image Analysis</h3>
+<table class="pub_table">
+<tr><td>
+<p class="pub_title">Learning Better Registration to Learn Better Few-Shot Medical Image Segmentation: Authenticity, Diversity, and Robustness.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Rongjun Ge, Xiaoming Qi, Yang Chen, Jiasong Wu, Jean-Louis Coatrieux, Guanyu Yang, Shuo Li.<br>
+<i>IEEE transactions on neural networks and learning systems</i><br>
+<font color="#922B21"><b>&nbsp;IEEE T-NNLS 2022&nbsp;</b></font> |<a href= "https://ieeexplore.ieee.org/document/9842340">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/BRBS">&nbsp;Code&nbsp;</a> |<a href="./files/slide_RS.pdf">&nbsp;Slide&nbsp;</a> |<a href="./files/bib_BRBS.txt">&nbsp;Bibtex&nbsp;</a> |<a href="./files/paper_Chinese_BRBS.pdf">&nbsp;中译版&nbsp;</a> |<a href="https://zhuanlan.zhihu.com/p/558337633">&nbsp;中文解读&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Few-shot Learning for Deformable Medical Image Registration with Perception-Correspondence Decoupling and Reverse Teaching.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Tiantian Li, Rongjun Ge, Jian Yang, Youyong Kong, Jian Zhu, Huazhong Shu, Guanyu Yang, Shuo Li.<br>
+<i>IEEE Journal of Biomedical and Health Informatics</i><br>
+<font color="#922B21"><b>&nbsp;IEEE J-BHI 2022&nbsp;</b></font> |<a href= "https://ieeexplore.ieee.org/document/9477084">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/PC-Reg-RT">&nbsp;Code&nbsp;</a> |<a href="./files/slide_RS.pdf">&nbsp;Slide&nbsp;</a> |<a href="./files/bib_PC_Reg_RT.txt">&nbsp;Bibtex&nbsp;</a> |<a href="./files/paper_Chinese_PC_Reg_RT.pdf">&nbsp;中译版&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Deep complementary joint model for complex scene registration and few-shot segmentation on medical images.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Tiantian Li, Guanyu Yang, Youyong Kong, Yang Chen, Huazhong Shu, Jean-Louis Coatrieux, Jean-Louis Dillenseger, Shuo Li.<br>
+<i>European Conference on Computer Vision</i><br>
+<font color="#922B21"><b>&nbsp;ECCV 2020&nbsp;</b></font> |<a href= "https://link.springer.com/chapter/10.1007/978-3-030-58523-5_45">&nbsp;Paper&nbsp;</a> |<a href="#">Code</a> |<a href="./files/slide_DeepRS.pdf">&nbsp;Slide&nbsp;</a> |<a href="./files/bib_DeepRS.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Thin Semantics Enhancement via High-Frequency Priori Rule for Thin Structures Segmentation.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Rongjun Ge, Jiasong Wu, Jean-Louis Coatrieux, Huazhong Shu, Yang Chen, Guanyu Yang, Shuo Li.<br>
+<i>IEEE International Conference on Data Mining</i><br>
+<font color="#922B21"><b>&nbsp;ICDM 2021&nbsp;</b></font> |<a href= "https://ieeexplore.ieee.org/abstract/document/9679089">&nbsp;Paper&nbsp;</a> |<a href="#">Code&nbsp;</a> |<a href="./files/bib_HeFiNet.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">XMorpher: Full Transformer for Deformable Medical Image Registration via Cross Attention.</p>
+<p class="pub_author">Jiacheng Shi, <u><b>Yuting He</b></u>, Youyong Kong, Jean-Louis Coatrieux, Huazhong Shu, Guanyu Yang, Shuo Li.<br>
+<i>International Conference on Medical Image Computing and Computer-Assisted Intervention</i><br>
+<font color="#922B21"><b>&nbsp;MICCAI 2022&nbsp;</b></font> |<a href= "https://arxiv.org/pdf/2206.07349.pdf">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/Solemoon/XMorpher">&nbsp;Code&nbsp;</a> |<a href="./files/bib_XMorpher.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">MNet: Rethinking 2D/3D Networks for Anisotropic Medical Image Segmentation.</p>
+<p class="pub_author">Zhangfu Dong, <u><b>Yuting He</b></u>, Xiaoming Qi, Yang Chen, Huazhong Shu, Jean-Louis Coatrieux, Guanyu Yang, Shuo Li.<br>
+<i>International Joint Conference on Artificial Intelligence</i><br>
+<font color="#922B21"><b>&nbsp;IJCAI 2022&nbsp;</b></font> |<a href= "https://arxiv.org/abs/2205.04846">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/zfdong-code/MNet">&nbsp;Code&nbsp;</a></p>
+</td></tr>
+</table>
+
+<h3>☆ AI-assisted Surgery/Diagnosis/Prognosis</h3>
+<table class="pub_table">
+<tr><td>
+<p class="pub_title">Meta grayscale adaptive network for 3D integrated renal structures segmentation.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Guanyu Yang, Jian Yang, Rongjun Ge, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Huazhong Shu, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li.<br>
+<i>Medical Image Analysis</i><br>
+<font color="#922B21"><b>&nbsp;MedIA 2021&nbsp;</b></font> |<a href= "https://www.sciencedirect.com/science/article/pii/S1361841521001018?via%3Dihub">&nbsp;Paper&nbsp;</a> |<a href= "https://kipa22.grand-challenge.org/">&nbsp;Data (KiPA22 Challenge)&nbsp;</a> |<a href="./files/bib_MGANet.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Dense biased networks with deep priori anatomy and hard region adaptation: Semi-supervised learning for fine renal artery segmentation.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Guanyu Yang*, Jian Yang, Yang Chen, Youyong Kong, Jiasong Wu, Lijun Tang, Xiaomei Zhu, Jean-Louis Dillenseger, Pengfei Shao, Shaobo Zhang, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.<br>
+<i>Medical Image Analysis</i><br>
+<font color="#922B21"><b>&nbsp;MedIA 2020&nbsp;</b></font> |<a href="https://www.sciencedirect.com/science/article/pii/S1361841520300864">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/DenseBiasNet-pytorch">&nbsp;Code&nbsp;</a> |<a href="./files/poster_DPA_DenseBiasNet.pdf">&nbsp;Poster&nbsp;</a> |<a href="./files/slide_DPA_DenseBiasNet.pdf">&nbsp;Slide&nbsp;</a> |<a href="https://link.springer.com/chapter/10.1007/978-3-030-32226-7_16">&nbsp;MICCAI2019 version&nbsp;</a> |<a href="./files/bib_DPA_DenseBiasNet.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">Multi-Task Learning for Pulmonary Arterial Hypertension Prognosis Prediction via Memory Drift and Prior Prompt Learning on 3D Chest CT.</p>
+<p class="pub_author">Guanyu Yang#, <u><b>Yuting He# (Equal contribution)</b></u>, Yang Lv, Yang Chen, Jean-Louis Coatrieux, Xiaoxuan Sun, Qiang Wang, Yongyue Wei, Shuo Li, and Yinsu Zhu.<br>
+<i>IEEE Journal of Biomedical and Health Informatics</i><br>
+<font color="#922B21"><b>&nbsp;IEEE J-BHI 2023&nbsp;</b></font> |<a href= "https://ieeexplore.ieee.org/document/10049641">&nbsp;Paper&nbsp;</a> |<a href="https://github.com/YutingHe-list/P2-Net">&nbsp;Code&nbsp;</a> |<a href="./files/slide_P2Net.pdf">&nbsp;Slide (Chinese)&nbsp;</a> |<a href="./files/bib_P2Net.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">EnMcGAN: Adversarial Ensemble Learning for 3D Complete Renal Structures Segmentation.</p>
+<p class="pub_author"><u><b>Yuting He</b></u>, Rongjun Ge, Xiaoming Qi, Guanyu Yang, Yang Chen, Youyong Kong, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.<br>
+<i>International Conference on Information Processing in Medical Imaging</i><br>
+<font color="#922B21"><b>&nbsp;IPMI 2021&nbsp;</b></font> |<a href= "https://link.springer.com/chapter/10.1007/978-3-030-78191-0_36">&nbsp;Paper&nbsp;</a> |<a href="./files/poster_EnMcGAN.pdf">&nbsp;Poster&nbsp;</a> |<a href="./files/bib_EnMcGAN.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+
+<tr><td>
+<p class="pub_title">CPNet: cycle prototype network for weakly-supervised 3D renal compartments segmentation on CT images.</p>
+<p class="pub_author">Song Wang#, <u><b>Yuting He# (Equal contribution)</b></u>, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li, Guanyu Yang.<br>
+<i>International Conference on Medical Image Computing and Computer-Assisted Intervention</i><br>
+<font color="#922B21"><b>&nbsp;MICCAI 2021&nbsp;</b></font> |<a href= "https://link.springer.com/chapter/10.1007/978-3-030-87196-3_55">&nbsp;Paper&nbsp;</a> |<a href="./files/bib_CPNet.txt">&nbsp;Bibtex&nbsp;</a></p>
+</td></tr>
+</table>
+
+<section class="services">
+<a id="services" class="anchor"></a>
+<h2>Services</h2>
+
+<p>Workshop/Challenge Organizers:</p>
+<ul>
+<li>Co-organizer of <a href="https://kipa22.grand-challenge.org/">MICCAI-KiPA22</a> challenge.</li>
+</ul>
+
+<p>Conference Reviewer:</p>
+<ul>
+<li>MICCAI, AAAI, CVPR, ICCV, NeurIPS.</li>
+</ul>
+
+<p>Journal Reviewer:</p>
+<ul>
+<li>IEEE Translations on Medical Imaging (TMI)</li>
+<li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
+<li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+<li>IEEE Journal of Biomedical and Health Informatics (J-BHI)</li>
+<li>Computerized Medical Imaging and Graphics (CMIG)</li>
+<li>Machine Intelligence Research (MIR)</li>
+</ul>
+</section>
+
+</div>
 </body>
 </html>
+
