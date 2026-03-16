@@ -438,7 +438,23 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
-
+/* ── FOOTER ── */
+footer {
+	background: var(--nav-bg);
+	padding: 40px 48px;
+	text-align: center;
+}
+.footer-name {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.2rem;
+	color: var(--accent-warm);
+	margin-bottom: 8px;
+}
+footer p {
+	font-size: 0.78rem;
+	color: rgba(255,255,255,0.3);
+	letter-spacing: 0.06em;
+}
 
 /* Publication */
 p.pub_title {
