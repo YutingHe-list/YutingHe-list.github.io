@@ -1,5 +1,21 @@
 /* Default css file for jemdoc. */
-
+:root {
+	--bg: #f7f5f0;
+	--surface: #ffffff;
+	--nav-bg: #111318;
+	--text-primary: #1a1a2e;
+	--text-secondary: #5a5a72;
+	--accent: #8b1a1a;
+	--accent-light: #c0392b;
+	--accent-warm: #e8d5b0;
+	--gold: #c8993a;
+	--border: #e2ddd6;
+	--card-bg: #ffffff;
+	--tag-bg: #faf0e6;
+	--tag-text: #8b1a1a;
+	--shadow: 0 4px 24px rgba(26,26,46,0.08);
+	--shadow-hover: 0 12px 40px rgba(26,26,46,0.16);
+}
 /* Menu */
 
 .menu {
@@ -69,11 +85,14 @@ table#tlayout {
     background: white;
 }
 
+
 body {
-	background: white;
-	font-family: Georgia, serif;
-	padding-bottom: 8px;
-	margin: 0;
+	background: var(--bg);
+	font-family: 'Jost', sans-serif;
+	color: var(--text-primary);
+	font-size: 16px;
+	line-height: 1.7;
+	overflow-x: hidden;
 }
 
 #layout-menu {
