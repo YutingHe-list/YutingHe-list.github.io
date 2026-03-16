@@ -324,5 +324,44 @@
 
         </div>
     </div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-name">Yuting He · 何宇霆</div>
+    <p>Research Associate · Case Western Reserve University · Cleveland, OH</p>
+</footer>
+
+<!-- SCROLL TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+    // Scroll-to-top button
+    const btn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Stagger news items on load
+    document.querySelectorAll('.news-item').forEach((el, i) => {
+        el.style.animationDelay = `${i * 0.04}s`;
+    });
+
+    // Subtle nav highlight on scroll
+    const sections = document.querySelectorAll('section[id], .hero');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id || 'home';
+                navLinks.forEach(l => {
+                    l.style.color = l.getAttribute('href') === '#' + id
+                        ? 'var(--accent-warm)'
+                        : 'rgba(255,255,255,0.6)';
+                });
+            }
+        });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('#home, #research, #awards, #services').forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
