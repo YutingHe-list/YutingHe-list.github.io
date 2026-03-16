@@ -479,6 +479,60 @@ footer p {
 #scroll-top.visible { opacity: 1; transform: none; }
 #scroll-top:hover { background: var(--accent-light); }
 
+/* ── NEWS ── */
+.news-section { background: var(--bg); }
+.news-scroll {
+	max-height: 320px;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--border) transparent;
+}
+.news-item {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	gap: 20px;
+	padding: 16px 0;
+	border-bottom: 1px solid var(--border);
+	align-items: baseline;
+	animation: fadeIn 0.4s ease both;
+}
+.news-item:last-child { border-bottom: none; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+.news-date {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 0.75rem;
+	color: var(--text-secondary);
+	white-space: nowrap;
+}
+.news-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+.badge-cvpr { background: #1a1a2e; color: #fff; }
+.badge-media { background: #2d6a4f; color: #fff; }
+.badge-journal { background: #7c3aed; color: #fff; }
+.badge-award { background: var(--gold); color: #fff; }
+.badge-service { background: var(--accent); color: #fff; }
+.badge-preprint { background: #64748b; color: #fff; }
+.news-text {
+	font-size: 0.88rem;
+	color: var(--text-secondary);
+	line-height: 1.6;
+}
+.news-text a {
+	color: var(--accent-light);
+	text-decoration: none;
+}
+.news-text a:hover { text-decoration: underline; }
+
+
 /* Publication */
 p.pub_title {
 	font-size: 16px;
