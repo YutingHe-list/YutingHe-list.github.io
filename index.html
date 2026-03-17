@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Yuting He · 何宇霆</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-
-/* ── TOKENS ── */
 :root {
-  --navy:    #1a2744;   /* single accent — used sparingly */
-  --ink:     #1e1e1e;
-  --body:    #3a3a3a;
-  --muted:   #777;
-  --border:  #d8d8d8;
-  --bg:      #f9f8f6;
-  --white:   #ffffff;
+  --ink:      #1c1c1e;
+  --body:     #3d3d3d;
+  --muted:    #888;
+  --border:   #ddd;
+  --bg:       #f8f7f4;
+  --white:    #fff;
+  --accent:   #8b1a1a;   /* deep red — used only for highlights */
+  --gold:     #b8832a;
+  --nav:      #16181d;
+  --tag-bg:   #f3ede4;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 14.5px;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
   line-height: 1.75;
   color: var(--body);
   overflow-x: hidden;
@@ -34,913 +34,923 @@ body {
 /* ── NAV ── */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 48px;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  gap: 2px;
+  height: 52px;
+  background: var(--nav);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
 }
-.nav a {
-  font-size: .72rem; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase;
-  padding: 6px 18px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color .15s;
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; color: rgba(255,255,255,.7); letter-spacing: .04em;
 }
-.nav a:hover { color: var(--navy); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: .72rem; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
 
 /* ── HERO ── */
 .hero {
-  margin-top: 48px;
+  margin-top: 52px;
   background: var(--white);
   border-bottom: 1px solid var(--border);
 }
 .hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 56px 48px 52px;
-  display: grid;
-  grid-template-columns: 1fr 180px;
-  gap: 48px;
-  align-items: start;
+  max-width: 960px; margin: 0 auto;
+  padding: 60px 56px 56px;
+  display: grid; grid-template-columns: 1fr 200px;
+  gap: 56px; align-items: start;
 }
-
 .hero-name {
-  font-family: 'EB Garamond', serif;
-  font-size: 2.6rem;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.1;
-  margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 700;
+  color: var(--ink); line-height: 1.1; margin-bottom: 4px;
 }
 .hero-name-cn {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--muted);
-  margin-bottom: 22px;
+  font-size: .95rem; color: var(--muted);
+  letter-spacing: .06em; margin-bottom: 20px;
 }
 .hero-role {
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 16px;
+  font-size: .88rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
 }
-.hero-info {
-  font-size: .88rem;
-  color: var(--body);
-  line-height: 1.85;
-  margin-bottom: 16px;
+.hero-affil {
+  font-size: .88rem; color: var(--body); margin-bottom: 20px; line-height: 1.6;
 }
 .hero-email {
-  font-size: .84rem;
-  color: var(--body);
-  margin-bottom: 22px;
-  font-family: 'Inter', monospace;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem; color: var(--muted); margin-bottom: 24px;
 }
-.hero-links {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-bottom: 24px;
+.hero-links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+.hero-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid var(--border);
+  border-radius: 3px; font-size: .76rem; font-weight: 500;
+  color: var(--body); text-decoration: none;
+  transition: all .2s;
 }
-.hero-links a {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: .78rem; font-weight: 500;
-  color: var(--body);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 4px 12px;
-  transition: border-color .15s, color .15s;
-}
-.hero-links a:hover { border-color: var(--navy); color: var(--navy); }
-.hero-links img { display: block; }
-
+.hero-link:hover { border-color: var(--accent); color: var(--accent); }
 .hero-cta {
-  font-size: .85rem;
-  color: var(--muted);
-  line-height: 1.7;
-  border-left: 2px solid var(--navy);
-  padding-left: 14px;
+  font-size: .86rem; color: var(--muted);
+  border-left: 3px solid var(--accent);
+  padding-left: 14px; line-height: 1.65;
+  font-style: italic;
 }
-
 .hero-photo {
-  width: 160px;
-  display: block;
-  margin-top: 8px;
+  width: 200px; height: 230px; object-fit: cover;
+  border-radius: 3px; display: block;
   border: 1px solid var(--border);
 }
 
-/* ── PAGE ── */
-.page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 48px 80px;
-}
-
-/* anchor offset */
-.anchor-target {
-  display: block; position: relative;
-  top: -68px; visibility: hidden;
-}
+/* ── PAGE BODY ── */
+.page { max-width: 960px; margin: 0 auto; padding: 0 56px 80px; }
 
 /* ── SECTION HEADING ── */
 .sh {
-  padding-top: 52px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
-  display: flex; align-items: baseline; gap: 12px;
+  margin-top: 52px; margin-bottom: 22px;
+  border-bottom: 1px solid var(--border); padding-bottom: 10px;
+  display: flex; align-items: baseline; gap: 14px;
 }
 .sh h2 {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--ink);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; font-weight: 700; color: var(--ink);
 }
-.sh a {
-  font-size: .74rem;
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: 500;
+.sh-link {
+  font-size: .75rem; color: var(--accent);
+  text-decoration: none; font-weight: 500; margin-left: auto;
 }
-.sh a:hover { text-decoration: underline; }
+.sh-link:hover { text-decoration: underline; }
 
-/* ── BIOGRAPHY ── */
-.bio-text {
-  font-size: .9rem;
-  color: var(--body);
-  line-height: 1.82;
-}
+/* ── BIO ── */
+.bio-p { font-size: .93rem; color: var(--body); margin-bottom: 14px; line-height: 1.8; }
+.bio-p strong { color: var(--ink); font-weight: 600; }
 
 /* ── NEWS ── */
-.news-box {
-  height: 240px;
-  overflow-y: auto;
-  border: 1px solid var(--border);
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+.news-scroll {
+  max-height: 300px; overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
 }
-.news-list { list-style: none; }
-.news-list li {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 16px;
-  padding: 9px 16px;
-  border-bottom: 1px solid var(--border);
-  font-size: .84rem;
-  color: var(--body);
-  line-height: 1.55;
+.news-item {
+  display: grid; grid-template-columns: 88px 1fr;
+  gap: 18px; padding: 12px 0;
+  border-bottom: 1px solid #f0ece6;
+  align-items: baseline;
 }
-.news-list li:last-child { border-bottom: none; }
-.news-date { color: var(--navy); font-weight: 500; white-space: nowrap; }
-.news-list a { color: var(--navy); text-decoration: none; }
-.news-list a:hover { text-decoration: underline; }
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; color: var(--muted); white-space: nowrap;
+}
+.news-text { font-size: .87rem; color: var(--body); line-height: 1.6; }
+.news-text a { color: var(--accent); text-decoration: none; }
+.news-text a:hover { text-decoration: underline; }
+
+/* News badge — only for truly distinct categories */
+.nb {
+  display: inline-block; padding: 1px 7px; border-radius: 3px;
+  font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; margin-right: 6px; vertical-align: middle;
+  position: relative; top: -1px;
+}
+.nb-conf    { background: var(--ink); color: #fff; }
+.nb-journal { background: #2d5986; color: #fff; }
+.nb-nature  { background: #2d6a4f; color: #fff; }
+.nb-award   { background: var(--gold); color: #fff; }
+.nb-service { background: #555; color: #fff; }
 
 /* ── RESEARCH FOCUS ── */
-.research-focus {
-  border: 1px solid var(--border);
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  background: var(--white);
+.focus-block {
+  margin: 20px 0 28px;
+  background: var(--nav);
+  border-radius: 6px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
-.research-focus p {
-  font-size: .88rem;
-  color: var(--body);
-  margin-bottom: 10px;
+.focus-item { }
+.focus-label {
+  font-size: .68rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 5px;
 }
-.research-focus ul { list-style: none; padding: 0; }
-.research-focus ul li {
-  font-size: .86rem;
-  color: var(--body);
-  padding: 3px 0 3px 16px;
+.focus-desc { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.55; }
+
+/* ── PUBLICATIONS ── */
+.pub-card {
+  padding: 20px 0;
+  border-bottom: 1px solid #f0ece6;
   position: relative;
 }
-.research-focus ul li::before {
-  content: '·'; position: absolute; left: 4px;
-  color: var(--navy); font-weight: 700;
+.pub-card:last-child { border-bottom: none; }
+.pub-card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 14px; margin-bottom: 6px;
 }
-.research-focus b { color: var(--ink); }
-
-/* ── PUBLICATION CARDS ── */
-.pub-list { display: flex; flex-direction: column; gap: 1px; }
-
-.pub-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-top: none;
-  padding: 18px 22px;
-  transition: background .15s;
+/* Venue badge — this is WHERE highlights matter */
+.vb {
+  display: inline-flex; align-items: center;
+  padding: 2px 11px; border-radius: 20px;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .07em; white-space: nowrap;
+  flex-shrink: 0; margin-top: 3px;
 }
-.pub-card:first-child { border-top: 1px solid var(--border); }
-.pub-card:hover { background: #f4f3f0; }
+.vb-cvpr    { border: 1.5px solid var(--ink);    color: var(--ink); }
+.vb-iccv    { border: 1.5px solid #2c5282;       color: #2c5282; }
+.vb-eccv    { border: 1.5px solid #4a235a;       color: #4a235a; }
+.vb-pami    { border: 1.5px solid #1a4480;       color: #1a4480; }
+.vb-tmi     { border: 1.5px solid #1a6b8a;       color: #1a6b8a; }
+.vb-media   { border: 1.5px solid #2d6a4f;       color: #2d6a4f; }
+.vb-nature  { border: 1.5px solid #2d6a4f;       color: #2d6a4f; background: #edf7f2; }
+.vb-rbme    { border: 1.5px solid #7b4ea0;       color: #7b4ea0; }
+.vb-default { border: 1.5px solid #aaa;          color: #888; }
 
 .pub-title {
-  font-family: 'EB Garamond', serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.45;
-  margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  line-height: 1.4; margin-bottom: 5px;
 }
-.pub-meta {
-  font-size: .82rem;
-  color: var(--body);
-  line-height: 1.6;
-  margin-bottom: 2px;
+.pub-authors {
+  font-size: .83rem; color: var(--muted);
+  line-height: 1.6; margin-bottom: 3px;
 }
-.pub-meta u { text-decoration: none; color: var(--ink); font-weight: 600; }
-.pub-meta i { color: var(--muted); }
-.pub-venue {
-  display: inline-block;
-  font-size: .72rem; font-weight: 600;
-  letter-spacing: .05em;
-  color: var(--navy);
-  margin-right: 6px;
-}
-.pub-links {
-  display: flex; flex-wrap: wrap; gap: 5px;
-  margin-top: 8px;
-}
-.pub-links a {
-  font-size: .74rem; font-weight: 500;
-  color: var(--body);
+.pub-authors .me {
+  color: var(--accent); font-weight: 600; font-style: normal;
   text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  padding: 2px 9px;
-  transition: all .15s;
 }
-.pub-links a:hover { border-color: var(--navy); color: var(--navy); }
+.pub-venue-line {
+  font-size: .82rem; color: var(--muted);
+  font-style: italic; margin-bottom: 11px;
+}
+.pub-venue-line strong { color: var(--body); font-style: normal; }
+.pub-links { display: flex; flex-wrap: wrap; gap: 7px; }
+.pl {
+  display: inline-block;
+  padding: 3px 11px;
+  background: var(--tag-bg);
+  border: 1px solid #e0d8ce;
+  border-radius: 3px;
+  font-size: .74rem; font-weight: 500;
+  color: var(--body); text-decoration: none;
+  transition: all .18s;
+}
+.pl:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.pl.paper { background: var(--accent); color: #fff; border-color: var(--accent); }
+.pl.paper:hover { background: #a52020; border-color: #a52020; }
 
 /* ── AWARDS ── */
-.simple-list { list-style: none; padding: 0; }
-.simple-list li {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
+.award-list { list-style: none; }
+.award-list li {
+  display: flex; gap: 16px; align-items: baseline;
+  padding: 11px 0; border-bottom: 1px solid #f0ece6;
   font-size: .88rem;
-  color: var(--body);
-  line-height: 1.6;
 }
-.simple-list li:last-child { border-bottom: none; }
-.simple-list span { color: var(--navy); font-weight: 500; }
+.award-list li:last-child { border-bottom: none; }
+.award-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .76rem; color: var(--accent); font-weight: 500;
+  min-width: 52px; flex-shrink: 0;
+}
+.award-name { color: var(--ink); font-weight: 500; }
+.award-note { font-size: .8rem; color: var(--gold); margin-top: 2px; }
 
 /* ── SERVICES ── */
-.svc-label {
-  font-size: .72rem; font-weight: 600;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: var(--muted);
-  margin: 24px 0 10px;
-  display: block;
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.svc-heading {
+  font-size: .72rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 16px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
 }
-.svc-list { list-style: none; padding: 0; }
-.svc-list li {
-  padding: 6px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: .86rem;
-  color: var(--body);
-  line-height: 1.6;
+.svc-item {
+  display: flex; gap: 10px; padding: 9px 0;
+  border-bottom: 1px solid #f0ece6; font-size: .86rem; align-items: baseline;
 }
-.svc-list li:last-child { border-bottom: none; }
-.svc-list a { color: var(--navy); text-decoration: none; }
-.svc-list a:hover { text-decoration: underline; }
+.svc-item:last-child { border-bottom: none; }
+.svc-star { color: var(--accent); min-width: 14px; font-size: .9rem; }
+.svc-text { color: var(--body); line-height: 1.5; }
+.svc-text strong { color: var(--ink); font-weight: 600; }
+.svc-text a { color: var(--accent); text-decoration: none; }
+.svc-text a:hover { text-decoration: underline; }
+.svc-text em { color: var(--ink); font-style: italic; }
 
 /* ── FOOTER BAR ── */
-.footer-bar {
-  margin-top: 56px;
-  background: var(--navy);
-  color: rgba(255,255,255,0.55);
-  font-size: .78rem;
-  padding: 0;
-}
+.footer-bar { background: var(--nav); margin-top: 64px; }
 .footer-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 14px; padding: 18px 56px; border-bottom: 1px solid rgba(255,255,255,.07);
 }
-/* Quick links */
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
+.footer-links { display: flex; gap: 8px; flex-wrap: wrap; }
 .footer-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 13px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: .73rem;
-  font-weight: 500;
-  letter-spacing: .04em;
-  transition: all .2s;
-  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 13px; border: 1px solid rgba(255,255,255,.13); border-radius: 20px;
+  color: rgba(255,255,255,.55); text-decoration: none;
+  font-size: .72rem; font-weight: 500; letter-spacing: .04em;
+  transition: all .2s; white-space: nowrap;
 }
-.footer-links a:hover {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  border-color: rgba(255,255,255,0.35);
-}
-/* Visitor counter */
+.footer-links a:hover { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.3); }
 .footer-counter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 8px 16px;
+  display: flex; align-items: center; gap: 9px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+  border-radius: 6px; padding: 7px 14px;
 }
-.footer-counter-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 6px #4ade80;
-  animation: blink 2.4s ease-in-out infinite;
+.fc-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #4ade80;
+  box-shadow: 0 0 6px #4ade80; animation: blink 2.5s ease-in-out infinite;
 }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-.footer-counter-label {
-  font-size: .72rem;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: .06em;
-  text-transform: uppercase;
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+.fc-label { font-size: .68rem; color: rgba(255,255,255,.35); letter-spacing: .08em; text-transform: uppercase; }
+.fc-num {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem;
+  color: #fff; font-weight: 700; min-width: 44px;
 }
-.footer-counter-num {
-  font-family: 'EB Garamond', Georgia, serif;
-  font-size: 1.1rem;
-  color: #fff;
-  font-weight: 600;
-  min-width: 48px;
-  letter-spacing: .04em;
-}
-/* Bottom bar */
 .footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 32px;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 56px; flex-wrap: wrap; gap: 8px;
 }
-.footer-copy { font-size: .72rem; color: rgba(255,255,255,0.3); }
-.footer-back-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 16px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 4px;
-  color: rgba(255,255,255,0.55);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  background: transparent;
-  transition: all .2s;
+.footer-copy { font-size: .7rem; color: rgba(255,255,255,.25); }
+.footer-btt {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 16px; border: 1px solid rgba(255,255,255,.18); border-radius: 3px;
+  color: rgba(255,255,255,.5); font-size: .7rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; background: transparent; transition: all .2s;
+  font-family: 'Jost', sans-serif;
 }
-.footer-back-top:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border-color: rgba(255,255,255,0.4);
-}
-.footer-back-top svg { transition: transform .2s; }
-.footer-back-top:hover svg { transform: translateY(-2px); }
+.footer-btt:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.footer-btt svg { transition: transform .2s; }
+.footer-btt:hover svg { transform: translateY(-2px); }
 
-/* ── SCROLL TOP ── */
-#stb {
-  display: none; /* replaced by footer back-top */
-  position: fixed; bottom: 28px; right: 28px;
-  width: 36px; height: 36px;
-  border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--body); cursor: pointer;
-  font-size: .8rem;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transform: translateY(8px);
-  transition: all .25s; z-index: 999;
-  border-radius: 2px;
+@media (max-width: 760px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { width: 160px; height: 185px; }
+  .page, .nav { padding-left: 24px; padding-right: 24px; }
+  .focus-block { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-top, .footer-bottom { padding-left: 24px; padding-right: 24px; }
 }
-#stb.on { opacity: 1; transform: none; }
-#stb:hover { border-color: var(--navy); color: var(--navy); }
-
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#home">Home</a>
-  <a href="#awards">Awards</a>
-  <a href="#publications">Research</a>
-  <a href="#services">Services</a>
+  <div class="nav-brand">Yuting He &nbsp;·&nbsp; 何宇霆</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#publications">Research</a>
+    <a href="#awards">Awards</a>
+    <a href="#services">Services</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<span id="home" class="anchor-target"></span>
-<div class="hero">
+<div class="hero" id="home">
   <div class="hero-inner">
     <div>
-      <div class="hero-name">Yuting He</div>
+      <h1 class="hero-name">Yuting He</h1>
       <div class="hero-name-cn">何宇霆</div>
       <div class="hero-role">Research Associate</div>
-      <div class="hero-info">
-        Rm 517A, Wickenden Bldg<br/>
-        Case Western Reserve University<br/>
-        Cleveland, OH 44106
+      <div class="hero-affil">
+        Department of Biomedical Engineering<br>
+        Case Western Reserve University<br>
+        Rm 517A, Wickenden Bldg, Cleveland, OH 44106
       </div>
       <div class="hero-email">yuting [DOT] he4 [AT] case [DOT] edu</div>
       <div class="hero-links">
-        <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=WYzBMTUAAAAJ">
-          <img src="./files/google_scholar.png" height="16"/>Google Scholar
+        <a class="hero-link" href="https://scholar.google.com/citations?hl=zh-CN&user=WYzBMTUAAAAJ" target="_blank">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h4.5v9h15v-9H24z"/></svg>
+          Google Scholar
         </a>
-        <a href="https://github.com/YutingHe-list">
-          <img src="./files/github_s.jpg" height="16"/>Github
+        <a class="hero-link" href="https://github.com/YutingHe-list" target="_blank">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          Github
         </a>
-        <a href="https://www.researchgate.net/profile/Yuting-He-17?ev=hdr_xprf">
-          <img src="./files/rg.png" height="16"/>ResearchGate
+        <a class="hero-link" href="https://www.researchgate.net/profile/Yuting-He-17" target="_blank">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"/></svg>
+          ResearchGate
         </a>
       </div>
       <div class="hero-cta">
         If you're interested in medical image analysis or foundational models, I'd be glad to share insights, provide guidance, or explore research opportunities together. Don't hesitate to get in touch.
       </div>
     </div>
-    <div>
-      <img class="hero-photo" src="./files/yutinghe_.jpg" alt="Yuting He"/>
-    </div>
+    <img src="./files/yutinghe_.jpg" alt="Yuting He" class="hero-photo">
   </div>
 </div>
 
-<!-- PAGE -->
 <div class="page">
 
   <!-- BIOGRAPHY -->
   <div class="sh"><h2>Biography</h2></div>
-  <p class="bio-text">
-    Dr. Yuting He is currently a Research Associate in the Department of Biomedical Engineering at Case Western Reserve University,
-    USA. He received his Ph.D. in Computer Science from Southeast University in 2023. His research lies at the forefront of medical
-    representation learning, interactive medical AI, and foundation models for healthcare, with a focus on developing structure-aware
-    and human-centered computational frameworks for multimodal medical data. Dr. He has published over 40 peer-reviewed articles in top-tier
-    journals and conferences, including Nature Communications, IEEE T-PAMI, IEEE T-MI, Medical Image Analysis, CVPR, ICCV, MICCAI, etc.
-    His scholarly contributions are widely recognized, evidenced by prestigious honors such as the Bao Gang Outstanding Student Award.
-    In addition to his research, Dr. He is actively involved in the academic community, serving as an Area Chair for MICCAI 2026, Senior Program
-    Committee member for IJCAI-ECAI 2026, and a regular reviewer for leading venues including IEEE T-MI, IEE T-NNLS, NeurIPS, CVPR, AAAI, etc.
+  <p class="bio-p">
+    Dr. Yuting He is currently a Research Associate in the Department of Biomedical Engineering at Case Western Reserve University, USA. He received his Ph.D. in Computer Science from Southeast University in 2023. His research lies at the forefront of <strong>medical representation learning</strong>, <strong>interactive medical AI</strong>, and <strong>foundation models for healthcare</strong>, with a focus on developing structure-aware and human-centered computational frameworks for multimodal medical data. Dr. He has published over 40 peer-reviewed articles in top-tier journals and conferences, including Nature Communications, IEEE T-PAMI, IEEE T-MI, Medical Image Analysis, CVPR, ICCV, MICCAI, etc. His scholarly contributions are widely recognized, evidenced by prestigious honors such as the Bao Gang Outstanding Student Award. In addition to his research, Dr. He is actively involved in the academic community, serving as an Area Chair for MICCAI 2026, Senior Program Committee member for IJCAI-ECAI 2026, and a regular reviewer for leading venues including IEEE T-MI, IEEE T-NNLS, NeurIPS, CVPR, AAAI, etc.
   </p>
 
   <!-- NEWS -->
   <div class="sh"><h2>News</h2></div>
-  <div class="news-box">
-    <ul class="news-list">
-      <li><span class="news-date">[2026.02]</span><span>3 papers have been accepted by CVPR 2026 (main * 2 + finding * 1)</span></li>
-      <li><span class="news-date">[2026.02]</span><span>1 paper has been accepted by MedIA (IF: 11.8)</span></li>
-      <li><span class="news-date">[2026.01]</span><span>Invited to serve as Area Chair in MICCAI 2026.</span></li>
-      <li><span class="news-date">[2026.01]</span><span>Invited to serve as SPC in IJCAI-ECAI 2026.</span></li>
-      <li><span class="news-date">[2026.01]</span><span>Invited to be a guest editor of a special issue (<a href="https://www.mdpi.com/journal/bioengineering/special_issues/F1D2SRD6O6">Advanced Computer Methods and Programs in Biomedicine</a>) for the Bioengineering!</span></li>
-      <li><span class="news-date">[2025.12]</span><span>Invited to be a guest editor of a special issue (<a href="https://www.mdpi.com/journal/sensors/special_issues/IS6UK91B30">Computer-Aided Medical Imaging Sensors and Their Applications</a>) for the Sensors!</span></li>
-      <li><span class="news-date">[2025.12]</span><span>1 paper has been accepted by IEEE TCSVT (IF: 11.1)</span></li>
-      <li><span class="news-date">[2025.07]</span><span>1 paper named <a href="https://ieeexplore.ieee.org/abstract/document/11079704">Adaptation follow human attention: Gaze-assisted medical segment anything model</a> has been accepted by IEEE TCSVT (IF: 11.1)</span></li>
-      <li><span class="news-date">[2025.07]</span><span>1 paper named <a href="https://ieeexplore.ieee.org/document/11180845">Conditional Virtual Imaging for Few-Shot Vascular Image Segmentation</a> has been accepted by IEEE TMI (IF: 9.8)</span></li>
-      <li><span class="news-date">[2025.06]</span><span>1 paper has been accepted by ICCV 2025</span></li>
-      <li><span class="news-date">[2025.05]</span><span>1 paper has been accepted by ICML 2025</span></li>
-      <li><span class="news-date">[2025.02]</span><span>1 paper about <a href="https://arxiv.org/abs/2502.05282">Homeomorphism and Medical Image Representation Learning</a> has been accepted by T-PAMI (IF: 20.8)</span></li>
-      <li><span class="news-date">[2024.11]</span><span>Our survey on <a href="https://arxiv.org/abs/2404.03264">healthcare foundation model</a> has been accepted by IEEE RBME (IF: 17.2)</span></li>
-      <li><span class="news-date">[2024.10]</span><span>An imaging foundation model, <a href="https://arxiv.org/abs/2410.01591">TAMP</a>, has been released. It can achieve universal enhancement for any non-ideal measurement CT images.</span></li>
-      <li><span class="news-date">[2024.04]</span><span>A survey about <a href="https://arxiv.org/abs/2404.03264">healthcare foundation models</a> has been released. This survey is "Foundation Model for Advancing Healthcare: Challenges, Opportunities and Future Directions"</span></li>
-      <li><span class="news-date">[2023.12]</span><span>I have graduated from Southeast University! My PhD thesis is "<a href="./files/PhD_thesis_YutingHe.pdf">Data-Efficient Learning Algorithm in Medical Image Segmentation</a>" (in Chinese)</span></li>
-      <li><span class="news-date">[2023.12]</span><span>1 paper has been accepted by J-BHI 2023</span></li>
-      <li><span class="news-date">[2023.11]</span><span>I achieved the Bao Gang Outstanding Student Award, which is one of the top educational scholarships in China (Only 500 students in China each year)</span></li>
-      <li><span class="news-date">[2023.11]</span><span>Our paper "Segment Anything in Medical Images" has been formally accepted by Nature Communications (Impact Factor: 17.0) <a href="https://github.com/bowang-lab/MedSAM">[code]</a></span></li>
-      <li><span class="news-date">[2023.09]</span><span>1 paper has been accepted by ICCV 2023</span></li>
-      <li><span class="news-date">[2023.06]</span><span>2 papers have been accepted by MICCAI 2023</span></li>
-      <li><span class="news-date">[2023.02]</span><span>1 paper has been accepted by CVPR 2023</span></li>
-      <li><span class="news-date">[2023.02]</span><span>1 paper has been accepted by JBHI</span></li>
-      <li><span class="news-date">[2023.02]</span><span>1 paper has been accepted by KBS</span></li>
-      <li><span class="news-date">[2022.08]</span><span>1 paper has been accepted by TNNLS</span></li>
-      <li><span class="news-date">[2022.06]</span><span><a href="https://kipa22.grand-challenge.org/">MICCAI 2022 KiPA</a> challenge is in full swing</span></li>
-      <li><span class="news-date">[2022.06]</span><span>4 papers are accepted by MICCAI 2022</span></li>
-      <li><span class="news-date">[2022.05]</span><span>1 paper has been accepted by IJCAI</span></li>
-      <li><span class="news-date">[2021.10]</span><span>1 paper has been accepted by TIP</span></li>
-    </ul>
+  <div class="news-scroll">
+    <div class="news-item">
+      <span class="news-date">2026.02</span>
+      <span class="news-text"><span class="nb nb-conf">CVPR</span>3 papers have been accepted by CVPR 2026 (main × 2 + finding × 1)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2026.02</span>
+      <span class="news-text"><span class="nb nb-journal">MedIA</span>1 paper has been accepted by MedIA (IF: 11.8)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2026.01</span>
+      <span class="news-text"><span class="nb nb-service">Service</span>Invited to serve as Area Chair in MICCAI 2026.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2026.01</span>
+      <span class="news-text"><span class="nb nb-service">Service</span>Invited to serve as SPC in IJCAI-ECAI 2026.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2026.01</span>
+      <span class="news-text">Invited to be a guest editor of a special issue (<a href="https://www.mdpi.com/journal/bioengineering/special_issues/F1D2SRD6O6">Advanced Computer Methods and Programs in Biomedicine</a>) for the Bioengineering!</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.12</span>
+      <span class="news-text">Invited to be a guest editor of a special issue (<a href="https://www.mdpi.com/journal/sensors/special_issues/IS6UK91B30">Computer-Aided Medical Imaging Sensors and Their Applications</a>) for the Sensors!</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.12</span>
+      <span class="news-text"><span class="nb nb-journal">TCSVT</span>1 paper has been accepted by IEEE TCSVT (IF: 11.1)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.07</span>
+      <span class="news-text"><span class="nb nb-journal">TCSVT</span>1 paper named <a href="https://ieeexplore.ieee.org/abstract/document/11079704">Adaptation follow human attention: Gaze-assisted medical segment anything model</a> has been accepted by IEEE TCSVT (IF: 11.1)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.07</span>
+      <span class="news-text"><span class="nb nb-journal">T-MI</span>1 paper named <a href="https://ieeexplore.ieee.org/document/11180845">Conditional Virtual Imaging for Few-Shot Vascular Image Segmentation</a> has been accepted by IEEE TMI (IF: 9.8)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.06</span>
+      <span class="news-text"><span class="nb nb-conf">ICCV</span>1 paper has been accepted by ICCV 2025</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.05</span>
+      <span class="news-text"><span class="nb nb-conf">ICML</span>1 paper has been accepted by ICML 2025</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2025.02</span>
+      <span class="news-text"><span class="nb nb-journal">T-PAMI</span>1 paper about <a href="https://arxiv.org/abs/2502.05282">Homeomorphism and Medical Image Representation Learning</a> has been accepted by T-PAMI (IF: 20.8)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2024.11</span>
+      <span class="news-text">Our survey on <a href="https://arxiv.org/abs/2404.03264">healthcare foundation model</a> has been accepted by IEEE RBME (IF: 17.2)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2024.10</span>
+      <span class="news-text">An imaging foundation model, <a href="https://arxiv.org/abs/2410.01591">TAMP</a>, has been released. It can achieve universal enhancement for any non-ideal measurement CT images.</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2024.04</span>
+      <span class="news-text">A survey about <a href="https://arxiv.org/abs/2404.03264">healthcare foundation models</a> has been released — "Foundation Model for Advancing Healthcare: Challenges, Opportunities and Future Directions"</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.12</span>
+      <span class="news-text">I have graduated from Southeast University! My PhD thesis is "<a href="./files/PhD_thesis_YutingHe.pdf">Data-Efficient Learning Algorithm in Medical Image Segmentation</a>" (in Chinese)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.11</span>
+      <span class="news-text"><span class="nb nb-award">Award</span>I achieved the Bao Gang Outstanding Student Award, one of the top educational scholarships in China (only 500 students in China each year)</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.11</span>
+      <span class="news-text"><span class="nb nb-nature">Nat.Comm</span>Our paper "Segment Anything in Medical Images" has been formally accepted by Nature Communications (IF: 17.0) <a href="https://github.com/bowang-lab/MedSAM">[code]</a></span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.09</span>
+      <span class="news-text"><span class="nb nb-conf">ICCV</span>1 paper has been accepted by ICCV 2023</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.06</span>
+      <span class="news-text"><span class="nb nb-conf">MICCAI</span>2 papers have been accepted by MICCAI 2023</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2023.02</span>
+      <span class="news-text"><span class="nb nb-conf">CVPR</span>1 paper has been accepted by CVPR 2023</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2022.08</span>
+      <span class="news-text"><span class="nb nb-journal">TNNLS</span>1 paper has been accepted by TNNLS</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2022.06</span>
+      <span class="news-text">4 papers are accepted by MICCAI 2022</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2022.05</span>
+      <span class="news-text"><span class="nb nb-conf">IJCAI</span>1 paper has been accepted by IJCAI</span>
+    </div>
+    <div class="news-item">
+      <span class="news-date">2021.10</span>
+      <span class="news-text"><span class="nb nb-journal">TIP</span>1 paper has been accepted by TIP</span>
+    </div>
   </div>
 
   <!-- PUBLICATIONS -->
-  <span id="publications" class="anchor-target"></span>
-  <div class="sh">
+  <div class="sh" id="publications">
     <h2>Selected Publications</h2>
-    <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=WYzBMTUAAAAJ" target="_blank">[Google Scholar]</a>
+    <a class="sh-link" href="https://scholar.google.com/citations?hl=zh-CN&user=WYzBMTUAAAAJ" target="_blank">Google Scholar →</a>
   </div>
 
-  <div class="research-focus">
-    <p>My research focuses on the question: How can we design <b>foundation models for medical AI</b> that</p>
-    <ul>
-      <li><b>Representation:</b> learn unified representations across modalities and institutions;</li>
-      <li><b>Interaction:</b> incorporate human intent and interaction into perception and decision-making;</li>
-      <li><b>Generalization:</b> adapt reliably and efficiently to new clinical environments?</li>
-    </ul>
+  <p class="bio-p" style="margin-bottom:6px;">My research focuses on the question: How can we design <strong>foundation models for medical AI</strong> that</p>
+  <div class="focus-block">
+    <div class="focus-item">
+      <div class="focus-label">Representation</div>
+      <div class="focus-desc">Learn unified representations across modalities and institutions</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-label">Interaction</div>
+      <div class="focus-desc">Incorporate human intent and interaction into perception and decision-making</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-label">Generalization</div>
+      <div class="focus-desc">Adapt reliably and efficiently to new clinical environments</div>
+    </div>
   </div>
 
-  <div class="pub-list">
-
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Free Lunch in Medical Image Foundation Model Pre-training via Randomized Synthesis and Disentanglement.</div>
-      <div class="pub-meta">Yuhan Wei#, <u><b>Yuting He# (Equal contribution)</b></u>, Linshan Wu, Fuxiang Huang, Junlin Hou, Hao Chen*</div>
-      <div class="pub-meta"><i>Preprint</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">Tech report</span>
-        <a href="https://arxiv.org/abs/2602.12317">Paper</a>
-        <a href="https://github.com/yweibs/RaSD">Code</a>
-        <a href="https://huggingface.co/datasets/yweibs/RaSD_synthetic_data/tree/main">Synthetic data</a>
-        <a href="https://drive.google.com/drive/folders/1aGwI2NihPzqsWH65t7uQe9Th8hOfMtD2">Pretrained models</a>
-      </div>
+      <span class="vb vb-default">Tech Report</span>
     </div>
+    <div class="pub-authors">Yuhan Wei#, <span class="me">Yuting He# (Equal contribution)</span>, Linshan Wu, Fuxiang Huang, Junlin Hou, Hao Chen*</div>
+    <div class="pub-venue-line"><em>Preprint</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2602.12317">Paper</a>
+      <a class="pl" href="https://github.com/yweibs/RaSD">Code</a>
+      <a class="pl" href="https://huggingface.co/datasets/yweibs/RaSD_synthetic_data/tree/main">Synthetic data</a>
+      <a class="pl" href="https://drive.google.com/drive/folders/1aGwI2NihPzqsWH65t7uQe9Th8hOfMtD2">Pretrained models</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Imaging foundation model for universal enhancement of non-ideal measurement CT.</div>
-      <div class="pub-meta">Yuxin Liu, Rongjun Ge, <u><b>Yuting He* (Corresponding author)</b></u>, Zhan Wu, Chenyu You, Shuo Li, Yang Chen*</div>
-      <div class="pub-meta"><i>Preprint</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">Tech report</span>
-        <a href="https://arxiv.org/abs/2410.01591">Paper</a>
-        <a href="https://github.com/YutingHe-list/TAMP">Code</a>
-        <a href="./files/bib_TAMP.txt">Bibtex</a>
-        <a href="https://huggingface.co/datasets/YutingHe-list/SimNICT">Dataset</a>
-        <a href="https://github.com/YutingHe-list/TAMP/blob/main/document/Model_zoo.md">Model zoo</a>
-        <a href="https://zhuanlan.zhihu.com/p/863644551">中文解读</a>
-      </div>
+      <span class="vb vb-default">Tech Report</span>
     </div>
+    <div class="pub-authors">Yuxin Liu, Rongjun Ge, <span class="me">Yuting He* (Corresponding author)</span>, Zhan Wu, Chenyu You, Shuo Li, Yang Chen*</div>
+    <div class="pub-venue-line"><em>Preprint</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2410.01591">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/TAMP">Code</a>
+      <a class="pl" href="./files/bib_TAMP.txt">Bibtex</a>
+      <a class="pl" href="https://huggingface.co/datasets/YutingHe-list/SimNICT">Dataset</a>
+      <a class="pl" href="https://github.com/YutingHe-list/TAMP/blob/main/document/Model_zoo.md">Model zoo</a>
+      <a class="pl" href="https://zhuanlan.zhihu.com/p/863644551">中文解读</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration.</div>
-      <div class="pub-meta">Shaochen Bi, <u><b>Yuting He* (Corresponding author)</b></u>, Weiming Wang, Hao Chen*</div>
-      <div class="pub-meta"><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">CVPR 2026</span>
-        <a href="https://arxiv.org/abs/2512.19486">Paper</a>
-        <a href="https://github.com/ShaochenBi/DySNet">Code</a>
-      </div>
+      <span class="vb vb-cvpr">CVPR 2026</span>
     </div>
+    <div class="pub-authors">Shaochen Bi, <span class="me">Yuting He* (Corresponding author)</span>, Weiming Wang, Hao Chen*</div>
+    <div class="pub-venue-line"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2512.19486">Paper</a>
+      <a class="pl" href="https://github.com/ShaochenBi/DySNet">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Generative Data-engine Foundation Model for Universal Few-shot 2D Vascular Image Segmentation.</div>
-      <div class="pub-meta">Rongjun Ge, Xin Li, Yuxing Liu, Chengliang Liu, Pinzheng Zhang, Jiong Zhang, Jian Yang, Jean-Louis Dillenseger, Chunfeng Yang#, <u><b>Yuting He* (Corresponding author)</b></u>, Yang Chen*</div>
-      <div class="pub-meta"><i>Medical Image Analysis</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">MedIA 2026</span>
-        <a href="https://www.sciencedirect.com/science/article/pii/S1361841526000654">Paper</a>
-        <a href="https://github.com/XinAloha/UniVG">Code</a>
-      </div>
+      <span class="vb vb-media">MedIA 2026</span>
     </div>
+    <div class="pub-authors">Rongjun Ge, Xin Li, Yuxing Liu, Chengliang Liu, Pinzheng Zhang, Jiong Zhang, Jian Yang, Jean-Louis Dillenseger, Chunfeng Yang#, <span class="me">Yuting He* (Corresponding author)</span>, Yang Chen*</div>
+    <div class="pub-venue-line"><em>Medical Image Analysis</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.sciencedirect.com/science/article/pii/S1361841526000654">Paper</a>
+      <a class="pl" href="https://github.com/XinAloha/UniVG">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Vector Contrastive Learning For Pixel-Wise Pretraining In Medical Vision.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Shuo Li</div>
-      <div class="pub-meta"><i>IEEE/CVF International Conference on Computer Vision</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">ICCV 2025</span>
-        <a href="https://arxiv.org/abs/2506.20850">Paper</a>
-        <a href="https://github.com/YutingHe-list/COVER">Code</a>
-        <a href="./files/slide_COVER.pdf">Slide</a>
-        <a href="https://zhuanlan.zhihu.com/p/1922109536103302891">中文解读</a>
-      </div>
+      <span class="vb vb-iccv">ICCV 2025</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Shuo Li</div>
+    <div class="pub-venue-line"><em>IEEE/CVF International Conference on Computer Vision</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2506.20850">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/COVER">Code</a>
+      <a class="pl" href="./files/slide_COVER.pdf">Slide</a>
+      <a class="pl" href="https://zhuanlan.zhihu.com/p/1922109536103302891">中文解读</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Adaptation follow human attention: Gaze-assisted medical segment anything model.</div>
-      <div class="pub-meta">Rongjun Ge, Ruiyi Li, Chong Wang, Yuxin Liu, Heng Zhu, Jean-Louis Coatrieux, Daoqiang Zhang, Jian Lu, Yang Chen, Shuo Li, <u><b>Yuting He*</b></u></div>
-      <div class="pub-meta"><i>IEEE Transactions on Circuits and Systems for Video Technology</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE T-CSVT 2025</span>
-        <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76">Paper</a>
-        <a href="https://github.com/Ruiz1026/GAM">Code</a>
-      </div>
+      <span class="vb vb-journal" style="border-color:#1a6b8a;color:#1a6b8a;">TCSVT 2025</span>
     </div>
+    <div class="pub-authors">Rongjun Ge, Ruiyi Li, Chong Wang, Yuxin Liu, Heng Zhu, Jean-Louis Coatrieux, Daoqiang Zhang, Jian Lu, Yang Chen, Shuo Li, <span class="me">Yuting He*</span></div>
+    <div class="pub-venue-line"><em>IEEE Transactions on Circuits and Systems for Video Technology</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76">Paper</a>
+      <a class="pl" href="https://github.com/Ruiz1026/GAM">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Human gaze-based dual teacher guidance learning for semi-supervised medical image segmentation.</div>
-      <div class="pub-meta">Rongjun Ge, Chong Wang, Yuxin Liu, Chunqiang Lu, Cong Xia, Yehui Jiang, Fangyi Xu, Yinsu Zhu, Daoqiang Zhang, Chengyu Liu, Yang Chen, Shuo Li, <u><b>Yuting He*</b></u></div>
-      <div class="pub-meta"><i>Neural Networks</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">NN 2025</span>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0893608025007452">Paper</a>
-      </div>
+      <span class="vb vb-default">NN 2025</span>
     </div>
+    <div class="pub-authors">Rongjun Ge, Chong Wang, Yuxin Liu, Chunqiang Lu, Cong Xia, Yehui Jiang, Fangyi Xu, Yinsu Zhu, Daoqiang Zhang, Chengyu Liu, Yang Chen, Shuo Li, <span class="me">Yuting He*</span></div>
+    <div class="pub-venue-line"><em>Neural Networks</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.sciencedirect.com/science/article/pii/S0893608025007452">Paper</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Homeomorphism Prior for False Positive and Negative Problem in Medical Image Dense Contrastive Representation Learning.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Boyu Wang, Rongjun Ge, Yang Chen, Guanyu Yang, Shuo Li</div>
-      <div class="pub-meta"><i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE T-PAMI 2025</span>
-        <a href="https://arxiv.org/abs/2502.05282">Paper</a>
-        <a href="https://github.com/YutingHe-list/GEMINI">Code</a>
-        <a href="https://zhuanlan.zhihu.com/p/29316280297">中文解读</a>
-      </div>
+      <span class="vb vb-pami">T-PAMI 2025</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Boyu Wang, Rongjun Ge, Yang Chen, Guanyu Yang, Shuo Li</div>
+    <div class="pub-venue-line"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2502.05282">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/GEMINI">Code</a>
+      <a class="pl" href="https://zhuanlan.zhihu.com/p/29316280297">中文解读</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Conditional Virtual Imaging for Few-Shot Vascular Image Segmentation.</div>
-      <div class="pub-meta">Yanglong He, Rongjun Ge, Hui Tang, Yuxin Liu, Mengqing Su, Jean-Louis Coatrieux, Huazhong Shu, Yang Chen, <u><b>Yuting He</b></u></div>
-      <div class="pub-meta"><i>IEEE Transactions on Medical Imaging</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE T-MI 2025</span>
-        <a href="https://ieeexplore.ieee.org/document/11180845">Paper</a>
-        <a href="https://github.com/ppIntelligence/CVI">Code</a>
-      </div>
+      <span class="vb vb-tmi">T-MI 2025</span>
     </div>
+    <div class="pub-authors">Yanglong He, Rongjun Ge, Hui Tang, Yuxin Liu, Mengqing Su, Jean-Louis Coatrieux, Huazhong Shu, Yang Chen, <span class="me">Yuting He</span></div>
+    <div class="pub-venue-line"><em>IEEE Transactions on Medical Imaging</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/document/11180845">Paper</a>
+      <a class="pl" href="https://github.com/ppIntelligence/CVI">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Foundation Model for Advancing Healthcare: Challenges, Opportunities and Future Directions.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Fuxiang Huang, Xinrui Jiang, Yuxiang Nie, Minghao Wang, Jiguang Wang, Hao Chen.</div>
-      <div class="pub-meta"><i>IEEE Reviews in Biomedical Engineering</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE R-BME 2024</span>
-        <a href="https://arxiv.org/abs/2404.03264">Paper</a>
-        <a href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare">Awesome repository</a>
-        <a href="./files/bib_HFM.txt">Bibtex</a>
-        <a href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare/blob/main/files/HFM_Chinese.pdf">中译版</a>
-      </div>
+      <span class="vb vb-rbme">RBME 2024</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Fuxiang Huang, Xinrui Jiang, Yuxiang Nie, Minghao Wang, Jiguang Wang, Hao Chen.</div>
+    <div class="pub-venue-line"><em>IEEE Reviews in Biomedical Engineering</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2404.03264">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare">Awesome repository</a>
+      <a class="pl" href="./files/bib_HFM.txt">Bibtex</a>
+      <a class="pl" href="https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare/blob/main/files/HFM_Chinese.pdf">中译版</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Segment Anything in Medical Images.</div>
-      <div class="pub-meta">Jun Ma, <u><b>Yuting He</b></u>, Feifei Li, Lin Han, Chenyu You, Bo Wang.</div>
-      <div class="pub-meta"><i>Nature Communications</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">Nat. Comm 2024</span>
-        <a href="https://www.nature.com/articles/s41467-024-44824-z">Paper</a>
-        <a href="https://github.com/bowang-lab/MedSAM">Code</a>
-      </div>
+      <span class="vb vb-nature">Nat. Comm 2024</span>
     </div>
+    <div class="pub-authors">Jun Ma, <span class="me">Yuting He</span>, Feifei Li, Lin Han, Chenyu You, Bo Wang.</div>
+    <div class="pub-venue-line"><em>Nature Communications</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.nature.com/articles/s41467-024-44824-z">Paper</a>
+      <a class="pl" href="https://github.com/bowang-lab/MedSAM">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Geometric Visual Similarity Learning in 3D Medical Image Self-supervised Pre-training.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Guanyu Yang, Rongjun Ge, Yang Chen, Jean-Louis Coatrieux, Boyu Wang, Shuo Li.</div>
-      <div class="pub-meta"><i>IEEE/CVF Conference on Computer Vision and Pattern Recognition</i> (<b>Travel Award</b>)</div>
-      <div class="pub-links">
-        <span class="pub-venue">CVPR 2023</span>
-        <a href="https://arxiv.org/abs/2303.00874">Paper</a>
-        <a href="https://github.com/YutingHe-list/GVSL">Code</a>
-        <a href="./files/poster_GVSL.pdf">Poster</a>
-        <a href="./files/slide_GVSL.pdf">Slide</a>
-        <a href="https://x-ark.github.io/">Homepage</a>
-        <a href="./files/bib_GVSL.txt">Bibtex</a>
-        <a href="./files/paper_Chinese_GVSL.pdf">中译版</a>
-      </div>
+      <span class="vb vb-cvpr">CVPR 2023</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Guanyu Yang, Rongjun Ge, Yang Chen, Jean-Louis Coatrieux, Boyu Wang, Shuo Li.</div>
+    <div class="pub-venue-line"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition</em> &nbsp;<strong>(Travel Award)</strong></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://arxiv.org/abs/2303.00874">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/GVSL">Code</a>
+      <a class="pl" href="./files/poster_GVSL.pdf">Poster</a>
+      <a class="pl" href="./files/slide_GVSL.pdf">Slide</a>
+      <a class="pl" href="https://x-ark.github.io/">Homepage</a>
+      <a class="pl" href="./files/bib_GVSL.txt">Bibtex</a>
+      <a class="pl" href="./files/paper_Chinese_GVSL.pdf">中译版</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">O2M-UDA: Unsupervised dynamic domain adaptation for one-to-multiple medical image segmentation.</div>
-      <div class="pub-meta">Ziyue Jiang#, <u><b>Yuting He# (Equal contribution)</b></u>, Shuai Ye, Pengfei Shao, Xiaomei Zhu, Yi Xu, Yang Chen, Jean-Louis Coatrieux, Shuo Li, Guanyu Yang.</div>
-      <div class="pub-meta"><i>Knowledge-Based Systems</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">KBS 2023</span>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0950705123001284">Paper</a>
-        <a href="https://github.com/ZoeyJiang/DyDA">Code</a>
-      </div>
+      <span class="vb vb-default">KBS 2023</span>
     </div>
+    <div class="pub-authors">Ziyue Jiang#, <span class="me">Yuting He# (Equal contribution)</span>, Shuai Ye, Pengfei Shao, Xiaomei Zhu, Yi Xu, Yang Chen, Jean-Louis Coatrieux, Shuo Li, Guanyu Yang.</div>
+    <div class="pub-venue-line"><em>Knowledge-Based Systems</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.sciencedirect.com/science/article/pii/S0950705123001284">Paper</a>
+      <a class="pl" href="https://github.com/ZoeyJiang/DyDA">Code</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Multi-Task Learning for Pulmonary Arterial Hypertension Prognosis Prediction via Memory Drift and Prior Prompt Learning on 3D Chest CT.</div>
-      <div class="pub-meta">Guanyu Yang#, <u><b>Yuting He# (Equal contribution)</b></u>, Yang Lv, Yang Chen, Jean-Louis Coatrieux, Xiaoxuan Sun, Qiang Wang, Yongyue Wei, Shuo Li, and Yinsu Zhu.</div>
-      <div class="pub-meta"><i>IEEE Journal of Biomedical and Health Informatics</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE J-BHI 2023</span>
-        <a href="https://ieeexplore.ieee.org/document/10049641">Paper</a>
-        <a href="https://github.com/YutingHe-list/P2-Net">Code</a>
-        <a href="./files/slide_P2Net.pdf">Slide (Chinese)</a>
-        <a href="./files/bib_P2Net.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-default">J-BHI 2023</span>
     </div>
+    <div class="pub-authors">Guanyu Yang#, <span class="me">Yuting He# (Equal contribution)</span>, Yang Lv, Yang Chen, Jean-Louis Coatrieux, Xiaoxuan Sun, Qiang Wang, Yongyue Wei, Shuo Li, and Yinsu Zhu.</div>
+    <div class="pub-venue-line"><em>IEEE Journal of Biomedical and Health Informatics</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/document/10049641">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/P2-Net">Code</a>
+      <a class="pl" href="./files/slide_P2Net.pdf">Slide (Chinese)</a>
+      <a class="pl" href="./files/bib_P2Net.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Learning Better Registration to Learn Better Few-Shot Medical Image Segmentation: Authenticity, Diversity, and Robustness.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Rongjun Ge, Xiaoming Qi, Yang Chen, Jiasong Wu, Jean-Louis Coatrieux, Guanyu Yang, Shuo Li.</div>
-      <div class="pub-meta"><i>IEEE transactions on neural networks and learning systems</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE T-NNLS 2022</span>
-        <a href="https://ieeexplore.ieee.org/document/9842340">Paper</a>
-        <a href="https://github.com/YutingHe-list/BRBS">Code</a>
-        <a href="./files/slide_RS.pdf">Slide</a>
-        <a href="./files/bib_BRBS.txt">Bibtex</a>
-        <a href="./files/paper_Chinese_BRBS.pdf">中译版</a>
-        <a href="https://zhuanlan.zhihu.com/p/558337633">中文解读</a>
-      </div>
+      <span class="vb vb-pami" style="border-color:#3b6b9a;color:#3b6b9a;">T-NNLS 2022</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Rongjun Ge, Xiaoming Qi, Yang Chen, Jiasong Wu, Jean-Louis Coatrieux, Guanyu Yang, Shuo Li.</div>
+    <div class="pub-venue-line"><em>IEEE Transactions on Neural Networks and Learning Systems</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/document/9842340">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/BRBS">Code</a>
+      <a class="pl" href="./files/slide_RS.pdf">Slide</a>
+      <a class="pl" href="./files/bib_BRBS.txt">Bibtex</a>
+      <a class="pl" href="./files/paper_Chinese_BRBS.pdf">中译版</a>
+      <a class="pl" href="https://zhuanlan.zhihu.com/p/558337633">中文解读</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Few-shot Learning for Deformable Medical Image Registration with Perception-Correspondence Decoupling and Reverse Teaching.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Tiantian Li, Rongjun Ge, Jian Yang, Youyong Kong, Jian Zhu, Huazhong Shu, Guanyu Yang, Shuo Li.</div>
-      <div class="pub-meta"><i>IEEE Journal of Biomedical and Health Informatics</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IEEE J-BHI 2022</span>
-        <a href="https://ieeexplore.ieee.org/document/9477084">Paper</a>
-        <a href="https://github.com/YutingHe-list/PC-Reg-RT">Code</a>
-        <a href="./files/slide_RS.pdf">Slide</a>
-        <a href="./files/bib_PC_Reg_RT.txt">Bibtex</a>
-        <a href="./files/paper_Chinese_PC_Reg_RT.pdf">中译版</a>
-      </div>
+      <span class="vb vb-default">J-BHI 2022</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Tiantian Li, Rongjun Ge, Jian Yang, Youyong Kong, Jian Zhu, Huazhong Shu, Guanyu Yang, Shuo Li.</div>
+    <div class="pub-venue-line"><em>IEEE Journal of Biomedical and Health Informatics</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/document/9477084">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/PC-Reg-RT">Code</a>
+      <a class="pl" href="./files/slide_RS.pdf">Slide</a>
+      <a class="pl" href="./files/bib_PC_Reg_RT.txt">Bibtex</a>
+      <a class="pl" href="./files/paper_Chinese_PC_Reg_RT.pdf">中译版</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Thin Semantics Enhancement via High-Frequency Priori Rule for Thin Structures Segmentation.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Rongjun Ge, Jiasong Wu, Jean-Louis Coatrieux, Huazhong Shu, Yang Chen, Guanyu Yang, Shuo Li.</div>
-      <div class="pub-meta"><i>IEEE International Conference on Data Mining</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">ICDM 2021</span>
-        <a href="https://ieeexplore.ieee.org/abstract/document/9679089">Paper</a>
-        <a href="#">Code</a>
-        <a href="./files/bib_HeFiNet.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-default">ICDM 2021</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Rongjun Ge, Jiasong Wu, Jean-Louis Coatrieux, Huazhong Shu, Yang Chen, Guanyu Yang, Shuo Li.</div>
+    <div class="pub-venue-line"><em>IEEE International Conference on Data Mining</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://ieeexplore.ieee.org/abstract/document/9679089">Paper</a>
+      <a class="pl" href="./files/bib_HeFiNet.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Meta grayscale adaptive network for 3D integrated renal structures segmentation.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Guanyu Yang, Jian Yang, Rongjun Ge, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Huazhong Shu, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li.</div>
-      <div class="pub-meta"><i>Medical Image Analysis</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">MedIA 2021</span>
-        <a href="https://www.sciencedirect.com/science/article/pii/S1361841521001018?via%3Dihub">Paper</a>
-        <a href="https://kipa22.grand-challenge.org/">Data (KiPA22 Challenge)</a>
-        <a href="./files/bib_MGANet.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-media">MedIA 2021</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Guanyu Yang, Jian Yang, Rongjun Ge, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Huazhong Shu, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li.</div>
+    <div class="pub-venue-line"><em>Medical Image Analysis</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.sciencedirect.com/science/article/pii/S1361841521001018?via%3Dihub">Paper</a>
+      <a class="pl" href="https://kipa22.grand-challenge.org/">Data (KiPA22 Challenge)</a>
+      <a class="pl" href="./files/bib_MGANet.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">EnMcGAN: Adversarial Ensemble Learning for 3D Complete Renal Structures Segmentation.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Rongjun Ge, Xiaoming Qi, Guanyu Yang, Yang Chen, Youyong Kong, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.</div>
-      <div class="pub-meta"><i>International Conference on Information Processing in Medical Imaging</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">IPMI 2021</span>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-78191-0_36">Paper</a>
-        <a href="./files/poster_EnMcGAN.pdf">Poster</a>
-        <a href="./files/bib_EnMcGAN.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-default">IPMI 2021</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Rongjun Ge, Xiaoming Qi, Guanyu Yang, Yang Chen, Youyong Kong, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.</div>
+    <div class="pub-venue-line"><em>International Conference on Information Processing in Medical Imaging</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://link.springer.com/chapter/10.1007/978-3-030-78191-0_36">Paper</a>
+      <a class="pl" href="./files/poster_EnMcGAN.pdf">Poster</a>
+      <a class="pl" href="./files/bib_EnMcGAN.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">CPNet: cycle prototype network for weakly-supervised 3D renal compartments segmentation on CT images.</div>
-      <div class="pub-meta">Song Wang#, <u><b>Yuting He# (Equal contribution)</b></u>, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li, Guanyu Yang.</div>
-      <div class="pub-meta"><i>International Conference on Medical Image Computing and Computer-Assisted Intervention</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">MICCAI 2021</span>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-87196-3_55">Paper</a>
-        <a href="./files/bib_CPNet.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-default">MICCAI 2021</span>
     </div>
+    <div class="pub-authors">Song Wang#, <span class="me">Yuting He# (Equal contribution)</span>, Youyong Kong, Xiaomei Zhu, Shaobo Zhang, Pengfei Shao, Jean-Louis Dillenseger, Jean-Louis Coatrieux, Shuo Li, Guanyu Yang.</div>
+    <div class="pub-venue-line"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://link.springer.com/chapter/10.1007/978-3-030-87196-3_55">Paper</a>
+      <a class="pl" href="./files/bib_CPNet.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Deep complementary joint model for complex scene registration and few-shot segmentation on medical images.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Tiantian Li, Guanyu Yang, Youyong Kong, Yang Chen, Huazhong Shu, Jean-Louis Coatrieux, Jean-Louis Dillenseger, Shuo Li.</div>
-      <div class="pub-meta"><i>European Conference on Computer Vision</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">ECCV 2020</span>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-58523-5_45">Paper</a>
-        <a href="#">Code</a>
-        <a href="./files/slide_DeepRS.pdf">Slide</a>
-        <a href="./files/bib_DeepRS.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-eccv">ECCV 2020</span>
     </div>
+    <div class="pub-authors"><span class="me">Yuting He</span>, Tiantian Li, Guanyu Yang, Youyong Kong, Yang Chen, Huazhong Shu, Jean-Louis Coatrieux, Jean-Louis Dillenseger, Shuo Li.</div>
+    <div class="pub-venue-line"><em>European Conference on Computer Vision</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://link.springer.com/chapter/10.1007/978-3-030-58523-5_45">Paper</a>
+      <a class="pl" href="./files/slide_DeepRS.pdf">Slide</a>
+      <a class="pl" href="./files/bib_DeepRS.txt">Bibtex</a>
+    </div>
+  </div>
 
-    <div class="pub-card">
+  <div class="pub-card">
+    <div class="pub-card-top">
       <div class="pub-title">Dense biased networks with deep priori anatomy and hard region adaptation: Semi-supervised learning for fine renal artery segmentation.</div>
-      <div class="pub-meta"><u><b>Yuting He</b></u>, Guanyu Yang*, Jian Yang, Yang Chen, Youyong Kong, Jiasong Wu, Lijun Tang, Xiaomei Zhu, Jean-Louis Dillenseger, Pengfei Shao, Shaobo Zhang, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.</div>
-      <div class="pub-meta"><i>Medical Image Analysis</i></div>
-      <div class="pub-links">
-        <span class="pub-venue">MedIA 2020</span>
-        <a href="https://www.sciencedirect.com/science/article/pii/S1361841520300864">Paper</a>
-        <a href="https://github.com/YutingHe-list/DenseBiasNet-pytorch">Code</a>
-        <a href="./files/poster_DPA_DenseBiasNet.pdf">Poster</a>
-        <a href="./files/slide_DPA_DenseBiasNet.pdf">Slide</a>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-32226-7_16">MICCAI2019 version</a>
-        <a href="./files/bib_DPA_DenseBiasNet.txt">Bibtex</a>
-      </div>
+      <span class="vb vb-media">MedIA 2020</span>
     </div>
-
-  </div><!-- /pub-list -->
+    <div class="pub-authors"><span class="me">Yuting He</span>, Guanyu Yang*, Jian Yang, Yang Chen, Youyong Kong, Jiasong Wu, Lijun Tang, Xiaomei Zhu, Jean-Louis Dillenseger, Pengfei Shao, Shaobo Zhang, Huazhong Shu, Jean-Louis Coatrieux, Shuo Li.</div>
+    <div class="pub-venue-line"><em>Medical Image Analysis</em></div>
+    <div class="pub-links">
+      <a class="pl paper" href="https://www.sciencedirect.com/science/article/pii/S1361841520300864">Paper</a>
+      <a class="pl" href="https://github.com/YutingHe-list/DenseBiasNet-pytorch">Code</a>
+      <a class="pl" href="./files/poster_DPA_DenseBiasNet.pdf">Poster</a>
+      <a class="pl" href="./files/slide_DPA_DenseBiasNet.pdf">Slide</a>
+      <a class="pl" href="https://link.springer.com/chapter/10.1007/978-3-030-32226-7_16">MICCAI2019 version</a>
+      <a class="pl" href="./files/bib_DPA_DenseBiasNet.txt">Bibtex</a>
+    </div>
+  </div>
 
   <!-- AWARDS -->
-  <span id="awards" class="anchor-target"></span>
-  <div class="sh"><h2>Awards and Honors</h2></div>
-  <ul class="simple-list">
-    <li>2023, Bao Gang Outstanding Student Award (宝钢优秀学生奖, <span>500 students in China each year</span>)</li>
-    <li>2021, 2023, National Scholarship</li>
-    <li>2023, Merit student of Jiangsu Province</li>
-    <li>2022, Southeast University Good Youth Award (东大好青年, <span>10 students in SEU each year</span>)</li>
-    <li>2022, Southeast University Graduate Student of the Year (正·青年, <span>10 graduated students in SEU each year</span>)</li>
-    <li>2019-2021, Merit student of Southeast University</li>
-    <li>2020, Southeast University Doctoral Freshman Award</li>
+  <div class="sh" id="awards"><h2>Awards and Honors</h2></div>
+  <ul class="award-list">
+    <li>
+      <div><div class="award-year">2023</div></div>
+      <div><div class="award-name">Bao Gang Outstanding Student Award (宝钢优秀学生奖)</div><div class="award-note">500 students in China each year</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2021, 2023</div></div>
+      <div><div class="award-name">National Scholarship</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2023</div></div>
+      <div><div class="award-name">Merit student of Jiangsu Province</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2022</div></div>
+      <div><div class="award-name">Southeast University Good Youth Award (东大好青年)</div><div class="award-note">10 students in SEU each year</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2022</div></div>
+      <div><div class="award-name">Southeast University Graduate Student of the Year (正·青年)</div><div class="award-note">10 graduated students in SEU each year</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2019–2021</div></div>
+      <div><div class="award-name">Merit student of Southeast University</div></div>
+    </li>
+    <li>
+      <div><div class="award-year">2020</div></div>
+      <div><div class="award-name">Southeast University Doctoral Freshman Award</div></div>
+    </li>
   </ul>
 
   <!-- SERVICES -->
-  <span id="services" class="anchor-target"></span>
-  <div class="sh"><h2>Professional Services</h2></div>
-
-  <span class="svc-label">Conference Services</span>
-  <ul class="svc-list">
-    <li>*MICCAI'26 Area Chair</li>
-    <li>*IJCAI-ECAI'26 Senior Program Committee</li>
-    <li>*Organization Committee of CVPR'26 workshop: <a href="">12th Workshop on Medical Computer Vision</a>.</li>
-    <li>*Organization Committee of MICCAI'22 challenge: <a href="https://kipa22.grand-challenge.org/">Kidney PArsing Challenge 2022</a></li>
-    <li>* Regular Conference reviewer: IEEE Conference on Computer Vision and Pattern Recognition (CVPR).</li>
-    <li>IEEE International Conference on Computer Vision (ICCV).</li>
-    <li>European Conference on Computer Vision (ECCV).</li>
-    <li>Association for the Advancement of Artificial Intelligence (AAAI).</li>
-    <li>Medical Image Computing and Computer Assisted Intervention (MICCAI).</li>
-    <li>Annual Conference on Neural Information Processing Systems (NeurIPS).</li>
-  </ul>
-
-  <span class="svc-label">Journal Services</span>
-  <ul class="svc-list">
-    <li>*Guest Editor of <i>Information Fusion</i> Special Issue: <a href="">"Trustworthy Multimodal Information Fusion for Healthcare: Representation, Causality, and Human-Centered Intelligence"</a>.</li>
-    <li>*Guest Editor of <i>Sensors</i> Special Issue: <a href="https://www.mdpi.com/journal/sensors/special_issues/IS6UK91B30">"Computer-Aided Medical Imaging Sensors and Their Applications"</a>.</li>
-    <li>*Guest Editor of <i>Bioengineering</i> Special Issue: <a href="https://www.mdpi.com/journal/bioengineering/special_issues/F1D2SRD6O6">"Advanced Computer Methods and Programs in Biomedicine"</a>.</li>
-    <li>* Regular Journal reviewer: IEEE Transactions on Medical Imaging (TMI)</li>
-    <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
-    <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
-    <li>IEEE Transactions on Human-Machine Systems (THMS)</li>
-    <li>IEEE Transactions on Radiation and Plasma Medical Sciences (TRPMS)</li>
-    <li>IEEE Journal of Biomedical and Health Informatics (J-BHI)</li>
-    <li>Pattern Recognition (PR)</li>
-    <li>Computerized Medical Imaging and Graphics (CMIG)</li>
-    <li>Machine Intelligence Research (MIR)</li>
-  </ul>
+  <div class="sh" id="services"><h2>Professional Services</h2></div>
+  <div class="svc-grid">
+    <div>
+      <div class="svc-heading">Conference Services</div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text"><strong>MICCAI 2026</strong> Area Chair</span></div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text"><strong>IJCAI-ECAI 2026</strong> Senior Program Committee</span></div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text">Organization Committee of CVPR'26 workshop: <a href="">12th Workshop on Medical Computer Vision</a></span></div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text">Organization Committee of MICCAI'22 challenge: <a href="https://kipa22.grand-challenge.org/">Kidney PArsing Challenge 2022</a></span></div>
+      <div class="svc-item"><span class="svc-star">·</span><span class="svc-text">Regular reviewer: CVPR · ICCV · ECCV · AAAI · MICCAI · NeurIPS</span></div>
+    </div>
+    <div>
+      <div class="svc-heading">Journal Services</div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text">Guest Editor, <em>Information Fusion</em> — <a href="">"Trustworthy Multimodal Information Fusion for Healthcare"</a></span></div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text">Guest Editor, <em>Sensors</em> — <a href="https://www.mdpi.com/journal/sensors/special_issues/IS6UK91B30">"Computer-Aided Medical Imaging Sensors and Their Applications"</a></span></div>
+      <div class="svc-item"><span class="svc-star">★</span><span class="svc-text">Guest Editor, <em>Bioengineering</em> — <a href="https://www.mdpi.com/journal/bioengineering/special_issues/F1D2SRD6O6">"Advanced Computer Methods and Programs in Biomedicine"</a></span></div>
+      <div class="svc-item"><span class="svc-star">·</span><span class="svc-text">Regular reviewer: IEEE T-MI · T-NNLS · TCSVT · THMS · TRPMS · J-BHI · PR · CMIG · MIR</span></div>
+    </div>
+  </div>
 
 </div><!-- /page -->
 
-<!-- ── FOOTER BAR ── -->
+<!-- FOOTER BAR -->
 <div class="footer-bar">
   <div class="footer-top">
-    <!-- Quick links -->
     <div class="footer-links">
       <a href="#home">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         Home
       </a>
       <a href="https://scholar.google.com/citations?hl=zh-CN&user=WYzBMTUAAAAJ" target="_blank">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h4.5v9h15v-9H24z"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h4.5v9h15v-9H24z"/></svg>
         Google Scholar
       </a>
       <a href="https://github.com/YutingHe-list" target="_blank">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
         GitHub
       </a>
       <a href="https://www.researchgate.net/profile/Yuting-He-17" target="_blank">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3"/></svg>
         ResearchGate
       </a>
       <a href="#publications">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         Publications
       </a>
       <a href="mailto:yuting.he4@case.edu">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email
       </a>
     </div>
-    <!-- Visitor counter -->
     <div class="footer-counter">
-      <div class="footer-counter-dot"></div>
-      <div class="footer-counter-label">Visitors</div>
-      <div class="footer-counter-num" id="visit-count">—</div>
+      <div class="fc-dot"></div>
+      <div class="fc-label">Visitors</div>
+      <div class="fc-num" id="visit-count">—</div>
     </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2024 Yuting He · Case Western Reserve University · Last updated <span id="last-updated"></span></span>
-    <button class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    <button class="footer-btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
       Back to Top
     </button>
   </div>
 </div>
 
 <script>
-// Last updated date
-document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long'});
-
-// Visitor counter using localStorage
+document.getElementById('last-updated').textContent =
+  new Date().toLocaleDateString('en-US',{year:'numeric',month:'long'});
 (function(){
-  var key = 'yh_visit_count';
-  var count = parseInt(localStorage.getItem(key) || '0') + 1;
-  localStorage.setItem(key, count);
-  // Animate count up
-  var el = document.getElementById('visit-count');
-  var start = Math.max(0, count - 20);
-  var current = start;
-  var timer = setInterval(function(){
-    current++;
-    el.textContent = current.toLocaleString();
-    if (current >= count) clearInterval(timer);
-  }, 40);
+  var k='yh_vc', n=parseInt(localStorage.getItem(k)||'0')+1;
+  localStorage.setItem(k,n);
+  var el=document.getElementById('visit-count'), c=Math.max(0,n-20);
+  var t=setInterval(function(){ c++; el.textContent=c.toLocaleString(); if(c>=n)clearInterval(t); },40);
 })();
+// Nav active highlight
+var navA=document.querySelectorAll('.nav-links a');
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){
+    var id='#'+e.target.id;
+    navA.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')===id); });
+  }});
+},{threshold:.35});
+['home','publications','awards','services'].forEach(function(id){
+  var el=document.getElementById(id); if(el)io.observe(el);
+});
 </script>
 </body>
 </html>
