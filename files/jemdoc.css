@@ -1,21 +1,36 @@
 /* Default css file for jemdoc. */
-:root {
-	--bg: #f7f5f0;
-	--surface: #ffffff;
-	--nav-bg: #111318;
-	--text-primary: #1a1a2e;
-	--text-secondary: #5a5a72;
-	--accent: #8b1a1a;
-	--accent-light: #c0392b;
-	--accent-warm: #e8d5b0;
-	--gold: #c8993a;
-	--border: #e2ddd6;
-	--card-bg: #ffffff;
-	--tag-bg: #faf0e6;
-	--tag-text: #8b1a1a;
-	--shadow: 0 4px 24px rgba(26,26,46,0.08);
-	--shadow-hover: 0 12px 40px rgba(26,26,46,0.16);
+
+
+/* ── NAV ── */
+nav {
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	z-index: 999;
+	background: var(--nav-bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 48px;
+	height: 60px;
 }
+.nav-brand {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.1rem;
+	color: var(--accent-warm);
+	letter-spacing: 0.04em;
+}
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+	color: rgba(255,255,255,0.6);
+	text-decoration: none;
+	font-size: 0.82rem;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--accent-warm); }
+
 /* Menu */
 
 .menu {
@@ -550,36 +565,6 @@ footer p {
 	text-decoration: none;
 }
 .news-text a:hover { text-decoration: underline; }
-
-/* ── NAV ── */
-nav {
-	position: fixed;
-	top: 0; left: 0; right: 0;
-	z-index: 999;
-	background: var(--nav-bg);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 48px;
-	height: 60px;
-}
-.nav-brand {
-	font-family: 'Playfair Display', serif;
-	font-size: 1.1rem;
-	color: var(--accent-warm);
-	letter-spacing: 0.04em;
-}
-.nav-links { display: flex; gap: 36px; }
-.nav-links a {
-	color: rgba(255,255,255,0.6);
-	text-decoration: none;
-	font-size: 0.82rem;
-	font-weight: 500;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	transition: color 0.25s;
-}
-.nav-links a:hover { color: var(--accent-warm); }
 
 /* Publication */
 p.pub_title {
