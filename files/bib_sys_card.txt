@@ -1,0 +1,8 @@
+@misc{He2025SystemsCardiology,
+  author       = {He, Yuting and Al-Kindi, Sadeer and Li, Shuo},
+  title        = {Systems Cardiology in the Age of Artificial Intelligence},
+  year         = {2025},
+  howpublished = {Preprint},
+  doi          = {10.13140/RG.2.2.34818.34249},
+  url          = {https://www.researchgate.net/publication/402708643}
+}
