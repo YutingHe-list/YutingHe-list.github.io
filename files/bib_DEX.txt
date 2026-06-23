@@ -1,0 +1,6 @@
+@InProceedings{he2026learning,
+  title={Learning Emergent Modular Representations in Multi-modality Medical Vision Foundation Models},
+  author={He, Yuting and You, Chenyu and Li, Shuo},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  year={2026}
+}
